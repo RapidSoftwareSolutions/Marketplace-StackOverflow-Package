@@ -1,0 +1,4129 @@
+{
+  "package": "StackOverflow",
+  "tagline": "StackOverflow API",
+  "description": "StackOverflow",
+  "image": "http:\/\/logo.clearbit.com\/stackoverflow.com",
+  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-StackOverflow-Package",
+  "keywords": [
+  ],
+  "accounts": {
+    "domain": "stackOverflow.com",
+    "credentials": [
+      "clientId",
+      "clientSecret",
+      "clientKey"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "getAccessToken",
+      "description": "Creates a new token",
+      "args": [
+        {
+          "name": "clientId",
+          "type": "credentials",
+          "info": "The client id obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "clientSecret",
+          "type": "credentials",
+          "info": "The client secret obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "redirectUri",
+          "type": "String",
+          "info": "Your redirect URI",
+          "required": true
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "info": "Code from the user.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "invalidateAccessToken",
+      "description": "Immediately expires the access token passed. This method is meant to allow an application to discard any active access tokens it no longer needs.",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "deAuthenticateApplication",
+      "description": "This method is meant for uninstalling applications, recovering from access_token leaks",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMe",
+      "description": "Returns the user associated with the passed accessToken",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: reputation(default), creation, name, modified.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUsersByIds",
+      "description": "Returns information about the user with provided Ids",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userIds",
+          "type": "String",
+          "info": "Ids of the user separated by semicolon.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: reputation(default), creation, name, modified.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUsers",
+      "description": "Returns all users on a site.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "inName",
+          "type": "String",
+          "info": "The inName parameter lets consumers filter the results down to just those users with a certain substring in their display name.",
+          "required": false
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: reputation(default), creation, name, modified.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getModerators",
+      "description": "Gets those users on a site who can exercise moderation powers. Note, employees of Stack Exchange Inc. will be returned if they have been granted moderation powers on a site even if they have never been appointed or elected explicitly. This method checks abilities, not the manner in which they were obtained.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: reputation(default), creation, name, modified.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getElectedModerators",
+      "description": "Returns those users on a site who both have moderator powers, and were actually elected. This method excludes Stack Exchange Inc. employees, unless they were actually elected moderators on a site (which can only have happened prior to their employment).",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: reputation(default), creation, name, modified.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyTimeline",
+      "description": "Get a subset of the actions of that have been taken by the users identified by accessToken.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUserTimeline",
+      "description": "Get a subset of the actions of that have been taken by the users identified by id.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "Number",
+          "info": "Id of the user",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAllAnswers",
+      "description": "Returns all the undeleted answers in the system.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: activity(default), creation, votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAnswersByIds",
+      "description": "Returns answers in the system with provided Ids.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "answerIds",
+          "type": "String",
+          "info": "List of ids separated by semicolon.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: activity(default), creation, votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "acceptAnswer",
+      "description": "Accepts an answer.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "answerId",
+          "type": "Number",
+          "info": "Id of the answer to accept",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "undoAcceptOnAnswer",
+      "description": "Undo accept on answer.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "answerId",
+          "type": "Number",
+          "info": "Id of the answer to undo accept",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "downvoteAnswer",
+      "description": "Downvote an answer.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "answerId",
+          "type": "Number",
+          "info": "Id of the answer to downvote",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "undoDownvoteOnAnswer",
+      "description": "Undo downvote on answer.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "answerId",
+          "type": "Number",
+          "info": "Id of the answer to undo downvote",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "upvoteAnswer",
+      "description": "Upvote an answer.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "answerId",
+          "type": "Number",
+          "info": "Id of the answer to upvote",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "undoUpvoteOnAnswer",
+      "description": "Undo upvote on answer.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "answerId",
+          "type": "Number",
+          "info": "Id of the answer to undo upvote",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "updateSingleAnswer",
+      "description": "Updates answer",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "answerId",
+          "type": "Number",
+          "info": "Id of the answer to undo downvote",
+          "required": true
+        },
+        {
+          "name": "answerBody",
+          "type": "String",
+          "info": "Body of the answer update",
+          "required": true
+        },
+        {
+          "name": "answerComment",
+          "type": "String",
+          "info": "Comment of the answer update",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAnswerFlagOptions",
+      "description": "Returns the different flags that the user identified with an accessToken can create for the answer identified by answerId. ",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "answerId",
+          "type": "Number",
+          "info": "Id of the answer",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "addFlagToAnswer",
+      "description": "Adds flag to the answer",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "answerId",
+          "type": "Number",
+          "info": "Id of the answer",
+          "required": true
+        },
+        {
+          "name": "flagId",
+          "type": "Number",
+          "info": "Id of the flag",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAnswersToQuestions",
+      "description": "Gets the answers to a set of questions identified in ids.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "questionIds",
+          "type": "String",
+          "info": "Question ids separated by semicolon",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: activity(default), creation, votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "createAnswerOnQuestion",
+      "description": "Create a new answer on the given question.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "questionId",
+          "type": "Number",
+          "info": "Id of the question to answer",
+          "required": true
+        },
+        {
+          "name": "answerBody",
+          "type": "String",
+          "info": "Body of the answer",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyAnswers",
+      "description": "Returns the answers owned by the user associated with the given accessToken.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: activity(default), creation, votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAnswersByUserIds",
+      "description": "Returns the answers the users in userIds have posted.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userIds",
+          "type": "String",
+          "info": "Ids of the users separated by semicolon.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: activity(default), creation, votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyAnswers",
+      "description": "Returns the top 30 answers the user associated with the given accessToken has posted in response to questions with the given tags.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "tagList",
+          "type": "String",
+          "info": "List of tags.",
+          "required": false
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: activity(default), creation, votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUserTopAnswersByTags",
+      "description": "Returns the top 30 answers the user associated with the given userId has posted in response to questions with the given tags.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "tagList",
+          "type": "String",
+          "info": "List of tags.",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "Number",
+          "info": "Id of the user",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: activity(default), creation, votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAllBadges",
+      "description": "Returns all the badges in the system.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "inName",
+          "type": "String",
+          "info": "The inName parameter lets consumers filter the results down to just those badges with a certain substring in their display name.",
+          "required": false
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: rank(default), name, type.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getBadgesByIds",
+      "description": "Gets the badges identified in badgeIds.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "badgeIds",
+          "type": "String",
+          "info": "Badge Ids separated by semicolon",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: rank(default), name, type.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getRecentlyAwardedBadges",
+      "description": "Returns recently awarded badges in the system.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAllNamedBadges",
+      "description": "Gets all explicitly named badges in the system.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "inName",
+          "type": "String",
+          "info": "The inName parameter lets consumers filter the results down to just those badges with a certain substring in their display name.",
+          "required": false
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: rank(default), name.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getTagsAwardedBadges",
+      "description": "Gets all explicitly named badges in the system.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "inName",
+          "type": "String",
+          "info": "The inName parameter lets consumers filter the results down to just those badges with a certain substring in their tag name.",
+          "required": false
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: rank(default), name.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyBadges",
+      "description": "Returns the badges earned by the user associated with the given accessToken",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: rank(default), name, type",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUsersBadges",
+      "description": "Returns the badges earned by the users associated with the given userIds",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userIds",
+          "type": "String",
+          "info": "Ids of the users separated by semicolon.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: rank(default), name, type",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "deleteSingleAnswer",
+      "description": "Deletes an answer.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "answerId",
+          "type": "Number",
+          "info": "Id of the answer to delete",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAnswersComments",
+      "description": "Gets the comments on a set of answers.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "answerIds",
+          "type": "String",
+          "info": "Answer Ids separated by semicolon",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAllComments",
+      "description": "Gets all the comments on the site.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getCommentsByIds",
+      "description": "Gets all the comments with commentIds.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "commentIds",
+          "type": "String",
+          "info": "Ids of the comments.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "createComment",
+      "description": "Create a new comment.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "postId",
+          "type": "Number",
+          "info": "Id of the post to comment",
+          "required": true
+        },
+        {
+          "name": "commentBody",
+          "type": "String",
+          "info": "Body of the comment",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "updateSingleComment",
+      "description": "Updates comment",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "commentId",
+          "type": "Number",
+          "info": "Id of the comment to update",
+          "required": true
+        },
+        {
+          "name": "commentBody",
+          "type": "String",
+          "info": "Body of the comment",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getCommentFlagOptions",
+      "description": "Returns the different flags that the user identified with an accessToken can create for the comment identified by commentId.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "commentId",
+          "type": "Number",
+          "info": "Id of the comment",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getQuestionFlagOptions",
+      "description": "Returns the different flags that the user identified with an accessToken can create for the question identified by questionId.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "questionId",
+          "type": "Number",
+          "info": "Id of the question",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "addFlagToComment",
+      "description": "Adds flag to the comment",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "commentId",
+          "type": "Number",
+          "info": "Id of the comment",
+          "required": true
+        },
+        {
+          "name": "commentId",
+          "type": "Number",
+          "info": "Id of the flag",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "upvoteComment",
+      "description": "Upvotes the comment.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "commentId",
+          "type": "Number",
+          "info": "Id of the comment to upvote",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "undoUpvoteOnComment",
+      "description": "Undo upvote on comment.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "commentId",
+          "type": "Number",
+          "info": "Id of the comment to undo upvote",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "deleteSingleComment",
+      "description": "Deletes a comment.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client Key for your application",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "commentId",
+          "type": "Number",
+          "info": "Id of the comment to delete",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getPostsCommentsByIds",
+      "description": "Gets the comments on a set of posts.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "postIds",
+          "type": "String",
+          "info": "Post Ids separated by semicolon",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyComments",
+      "description": "Returns the comments owned by the user associated with the given accessToken.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUsersComments",
+      "description": "Gets the comments of users in userIds",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userIds",
+          "type": "String",
+          "info": "User Ids separated by semicolon",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyReplyComments",
+      "description": "Returns the comments owned by the user associated with the given accessToken that are in reply to the user identified by userId.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "Number",
+          "info": "User Id",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUsersReplyComments",
+      "description": "Get the comments that the users in commentatorIds have posted in reply to the single user identified in userId.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "commentatorIds",
+          "type": "String",
+          "info": "Commentators' Ids",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "Number",
+          "info": "User Id",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMentionedMeComments",
+      "description": "Returns the comments mentioning the user associated with the given accessToken.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMentionedUsersComments",
+      "description": "Returns the comments mentioning the users in userIds.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userIds",
+          "type": "String",
+          "info": "Ids of users separated by semicolon",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAllEvents",
+      "description": "Returns a stream of events that have occurred on the site.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getStackoverflowStatistics",
+      "description": "Returns a collection of statistics about the site.",
+      "args": [
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyInbox",
+      "description": "Returns a user's inbox associated with accessToken",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUserInbox",
+      "description": "Returns a user's with provided Id inbox ",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "Number",
+          "info": "Id of the user",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyUnreadInboxItems",
+      "description": "Returns the unread items from a user's inbox associated with accessToken",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUserUnreadInboxItems",
+      "description": "Returns the unread items in a user's inbox.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "Number",
+          "info": "Id of the user",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyAssociatedAccounts",
+      "description": "Returns all of a user's associated accounts, given an acccessToken for them.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "accountTypes",
+          "type": "String",
+          "info": "You can filter the accountTypes returned by this method with the types parameter. Specify, semicolon delimited, main_site or meta_site to filter by site.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAssociatedAccountsByUserIds",
+      "description": "Returns all of a user's associated accounts, given their userIds",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userIds",
+          "type": "String",
+          "info": "List of user ids separated by semicolon.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "accountTypes",
+          "type": "String",
+          "info": "You can filter the accountTypes returned by this method with the types parameter. Specify, semicolon delimited, main_site or meta_site to filter by site.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUserActivity",
+      "description": "Returns a summary of a user's activity across the Stack Exchange network, given their userId.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "Number",
+          "info": "Id of the user",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "activityTypes",
+          "type": "String",
+          "info": "Type of network activity",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyActivity",
+      "description": "Returns a summary of a user's activity across the Stack Exchange network associated with provided accessToken.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "activityTypes",
+          "type": "String",
+          "info": "Type of network activity",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyNotifications",
+      "description": "Returns a user's notifications, given an accessToken.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUserNotifications",
+      "description": "Returns a user's notifications with provided userId.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "Number",
+          "info": "Id of the user",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyUnreadNotifications",
+      "description": "Returns a user's unread notifications, given an accessToken.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUserUnreadNotifications",
+      "description": "Returns a user's unread notifications with provided userId.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "Number",
+          "info": "Id of the user",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAllPosts",
+      "description": "Fetches all posts (questions and answers) on the site.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: activity(default), creation, votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getPostsByIds",
+      "description": "Fetches posts (questions and answers) on the site with provided Ids.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "postIds",
+          "type": "String",
+          "info": "Ids of posts.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: activity(default), creation, votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyPosts",
+      "description": "Fetches all posts (questions and answers) of the user with provided accessToken.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: activity(default), creation, votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getPostsByUserIds",
+      "description": "Fetches posts (questions and answers) on the site made by users with provided Ids.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userIds",
+          "type": "String",
+          "info": "Ids of users.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: activity(default), creation, votes.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAllPrivileges",
+      "description": "Returns the earnable privileges on a site.",
+      "args": [
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyPrivileges",
+      "description": "Returns the privileges on a site for the user identified by provided accessToken.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUserPrivileges",
+      "description": "Returns the privileges on a site for the user identified by provided userId.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "Number",
+          "info": "Id of the user.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyReputation",
+      "description": "Returns the reputation on a site for the user identified by provided accessToken.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUsersReputation",
+      "description": "Returns the reputation on a site for the user identified by provided userIds.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userIds",
+          "type": "String",
+          "info": "Ids of the users.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyReputationHistory",
+      "description": "Returns the reputation history on a site for the user identified by provided accessToken.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "createFilter",
+      "description": "Creates a new filter given a list of includes, excludes, a base filter, and whether or not this filter should be unsafe.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "includeList",
+          "type": "String",
+          "info": "List of includes",
+          "required": false
+        },
+        {
+          "name": "exludeList",
+          "type": "String",
+          "info": "List of excludes",
+          "required": false
+        },
+        {
+          "name": "baseFilter",
+          "type": "String",
+          "info": "Base filter",
+          "required": false
+        },
+        {
+          "name": "unsafe",
+          "type": "Boolean",
+          "info": "Is filter safe or not",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    }
+  ]
+}
