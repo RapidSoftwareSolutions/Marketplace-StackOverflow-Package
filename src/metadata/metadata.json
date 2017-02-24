@@ -2348,7 +2348,7 @@
           "required": true
         },
         {
-          "name": "commentId",
+          "name": "flagId",
           "type": "Number",
           "info": "Id of the flag",
           "required": true

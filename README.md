@@ -572,7 +572,7 @@ Adds flag to the comment
 | clientKey  | credentials| Client Key for your application
 | accessToken| String     | Access token obtained from StackOverflow.
 | commentId  | Number     | Id of the comment
-| commentId  | Number     | Id of the flag
+| flagId     | Number     | Id of the flag
 
 ## StackOverflow.upvoteComment
 Upvotes the comment.
