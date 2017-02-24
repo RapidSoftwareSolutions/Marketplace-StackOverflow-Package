@@ -4,7 +4,7 @@ $app->post('/api/StackOverflow/getUsersBadges', function ($request, $response, $
 
     //checking properly formed json
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['accessToken', 'clientKey', 'userId']);
+    $validateRes = $checkRequest->validate($request, ['accessToken', 'clientKey', 'userIds']);
     if (!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback'] == 'error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {
@@ -12,7 +12,7 @@ $app->post('/api/StackOverflow/getUsersBadges', function ($request, $response, $
     }
 
     //forming request to vendor API
-    $query_str = $settings['api_url'] . 'users/'.$post_data['args']['userId'].'/badges';
+    $query_str = $settings['api_url'] . 'users/'.$post_data['args']['userIds'].'/badges';
     $body = array();
 
     $body['access_token'] = $post_data['args']['accessToken'];
