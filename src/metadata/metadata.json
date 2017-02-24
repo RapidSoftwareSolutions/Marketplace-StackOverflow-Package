@@ -3179,7 +3179,7 @@
           "name": "userId",
           "type": "Number",
           "info": "Id of the user",
-          "required": false
+          "required": true
         },
         {
           "name": "pageNumber",
