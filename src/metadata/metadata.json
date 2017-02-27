@@ -4124,6 +4124,1549 @@
           "info": "error"
         }
       ]
+    },
+    {
+      "name": "getRevisionsByPostIds",
+      "description": "Returns edit revisions for the posts identified in postsIds",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "postIds",
+          "type": "String",
+          "info": "Ids of the posts.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getRevisionsByIds",
+      "description": "Returns edit revisions identified by revisionsIds",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "revisionIds",
+          "type": "String",
+          "info": "Ids of the revisions.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getPostsSuggestedEdits",
+      "description": "Returns suggested edits on the posts identified in ids.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "postIds",
+          "type": "String",
+          "info": "Post Ids separated by semicolon",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), approval, rejection.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAllSuggestedEdits",
+      "description": "Returns all the suggested edits in the systems.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), approval, rejection.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getSuggestedEditsByIds",
+      "description": "Returns suggested edits identified in editIds",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "editIds",
+          "type": "String",
+          "info": "Edit Ids separated by semicolon",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), approval, rejection.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMySuggestedEdits",
+      "description": "Returns the suggested edits the user identified by accessToken has submitted.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), approval, rejection.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUsersSuggestedEdits",
+      "description": "Returns the suggested edits a users in userIds have submitted.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userIds",
+          "type": "String",
+          "info": "User Ids separated by semicolon",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), approval, rejection.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getTags",
+      "description": "Returns the tags found on a site.",
+      "args": [
+
+        {
+          "name": "inName",
+          "type": "String",
+          "info": "Filters down to tags that contain a certain substring",
+          "required": false
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: popular(default), activity, name.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getModeratorTags",
+      "description": "Returns the tags found on a site that only moderators can use.",
+      "args": [
+
+        {
+          "name": "inName",
+          "type": "String",
+          "info": "Filters down to tags that contain a certain substring",
+          "required": false
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: popular(default), activity, name.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getRequiredTags",
+      "description": "Returns the tags found on a site that fulfill required tag constraints on questions.",
+      "args": [
+
+        {
+          "name": "inName",
+          "type": "String",
+          "info": "Filters down to tags that contain a certain substring",
+          "required": false
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: popular(default), activity, name.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getTagsInfo",
+      "description": "Returns tag objects representing the tags in tagNames found on the site.",
+      "args": [
+
+        {
+          "name": "tagNames",
+          "type": "String",
+          "info": "List of tag names separated by semicolon",
+          "required": false
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: popular(default), activity, name.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getRelatedTags",
+      "description": "Returns the tags that are most related to those in tagNames.",
+      "args": [
+
+        {
+          "name": "tagNames",
+          "type": "String",
+          "info": "List of tag names separated by semicolon",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyTags",
+      "description": "Returns the tags the user identified by the accessToken passed is active in.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: popular(default), activity, name.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUsersTags",
+      "description": "Returns the tags the users identified in userIds have been active in.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userIds",
+          "type": "String",
+          "info": "Ids of users",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: popular(default), activity, name.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleTagTopAnswerers",
+      "description": "Returns the top 30 answerers active in a single tag, of either all-time or the last 30 days.",
+      "args": [
+        {
+          "name": "tagName",
+          "type": "String",
+          "info": "Name of the tag",
+          "required": true
+        },
+        {
+          "name": "period",
+          "type": "String",
+          "info": "Period of the selection. Possible valued: all_time(default), month",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleTagTopAskers",
+      "description": "Returns the top 30 askers active in a single tag, of either all-time or the last 30 days.",
+      "args": [
+        {
+          "name": "tagName",
+          "type": "String",
+          "info": "Name of the tag",
+          "required": true
+        },
+        {
+          "name": "period",
+          "type": "String",
+          "info": "Period of the selection. Possible valued: all_time(default), month",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getAllTagsSynonyms",
+      "description": "Returns all tag synonyms found a site.",
+      "args": [
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), activity, applied.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getSynonymsForTags",
+      "description": "Gets all the synonyms that point to the tags identified in tagNames",
+      "args": [
+        {
+          "name": "tagNames",
+          "type": "String",
+          "info": "list of tags",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: creation(default), activity, applied.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getWikisForTags",
+      "description": "Gets all the synonyms that point to the tags identified in tagNames",
+      "args": [
+        {
+          "name": "tagNames",
+          "type": "String",
+          "info": "list of tags",
+          "required": true
+        },
+
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyTopAnswerTags",
+      "description": "Returns the user identified by accessToken's top 30 tags by answer score.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyTopQuestionTags",
+      "description": "Returns the user identified by accessToken's top 30 tags by question score.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getMyTopTags",
+      "description": "Returns the user identified by accessToken's top 30 tags by combined question and answer score.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUserTopAnswerTags",
+      "description": "Returns the user identified by userId top 30 tags by answer score.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "info": "id of the user",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    }, {
+      "name": "getUserTopQuestionTags",
+      "description": "Returns the user identified by userId top 30 tags by question score.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "info": "id of the user",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "getUserTopTags",
+      "description": "Returns the user identified by userId top 30 tags by combined question and answer score.",
+      "args": [
+        {
+          "name": "clientKey",
+          "type": "credentials",
+          "info": "Client key obtained from StackOverflow",
+          "required": true
+        },
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token obtained from StackOverflow.",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "String",
+          "info": "id of the user",
+          "required": true
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
+    },
+    {
+      "name": "search",
+      "description": "Returns the user identified by userId top 30 tags by combined question and answer score.",
+      "args": [
+
+        {
+          "name": "searchString",
+          "type": "String",
+          "info": "A free form text parameter, will match all question properties based on an undocumented algorithm.",
+          "required": true
+        },
+        {
+          "name": "sortingOrder",
+          "type": "String",
+          "info": "Ascending or descending sorting order. Possible values: asc and desc(default).",
+          "required": false
+        },
+        {
+          "name": "sortBy",
+          "type": "String",
+          "info": "Parameter to sort by. Possible values: activity(default), creation, votes, relevance.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "Number",
+          "info": "Number of the page",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "Number",
+          "info": "Size of the page",
+          "required": false
+        },
+        {
+          "name": "fromDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "toDate",
+          "type": "Number",
+          "info": "Defines the range of creation_date (unixtime format)",
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "Number",
+          "info": "Specify the range of a field must fall in (that field being specified by sortBy)",
+          "required": false
+        },
+        {
+          "name": "accepted",
+          "type": "Boolean",
+          "info": "true to return only questions with accepted answers, false to return only those without.",
+          "required": false
+        },
+        {
+          "name": "minAnswers",
+          "type": "Number",
+          "info": "The minimum number of answers returned questions must have",
+          "required": false
+        },
+        {
+          "name": "questionBody",
+          "type": "String",
+          "info": "Text which must appear in returned questions' bodies.",
+          "required": false
+        },
+        {
+          "name": "closed",
+          "type": "Boolean",
+          "info": "true to return only closed questions, false to return only open ones",
+          "required": false
+        },
+        {
+          "name": "migrated",
+          "type": "Boolean",
+          "info": "true to return only questions migrated away from a site, false to return only those not.",
+          "required": false
+        },
+        {
+          "name": "notice",
+          "type": "Boolean",
+          "info": "true to return only questions with post notices, false to return only those without.",
+          "required": false
+        },
+        {
+          "name": "exceptTags",
+          "type": "String",
+          "info": "A semicolon delimited list of tags, none of which will be present on returned questions. At least one additional parameter must be set if exceptTags is set, for performance reasons.",
+          "required": false
+        },
+        {
+          "name": "withTags",
+          "type": "String",
+          "info": "A semicolon delimited list of tags, of which at least one will be present on all returned questions.",
+          "required": false
+        },
+        {
+          "name": "questionTitle",
+          "type": "String",
+          "info": "Text which must appear in returned questions' titles.",
+          "required": false
+        },
+        {
+          "name": "questionerId",
+          "type": "Number",
+          "info": "The id of the user who must own the questions returned.",
+          "required": false
+        },
+        {
+          "name": "withUrl",
+          "type": "String",
+          "info": "A url which must be contained in a post, may include a wildcard.",
+          "required": false
+        },
+        {
+          "name": "minViews",
+          "type": "Number",
+          "info": "The minimum number of views returned questions must have.",
+          "required": false
+        },
+        {
+          "name": "wiki",
+          "type": "Boolean",
+          "info": "True to return only community wiki questions, false to return only non-community wiki ones.",
+          "required": false
+        }
+
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "error"
+        }
+      ]
     }
   ]
 }
