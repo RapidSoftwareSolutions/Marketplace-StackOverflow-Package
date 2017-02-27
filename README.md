@@ -1007,3 +1007,363 @@ Creates a new filter given a list of includes, excludes, a base filter, and whet
 | baseFilter | String     | Base filter
 | unsafe     | Boolean    | Is filter safe or not
 
+## StackOverflow.getRevisionsByPostIds
+Returns edit revisions for the posts identified in postsIds
+
+| Field      | Type       | Description
+|------------|------------|----------
+| clientKey  | credentials| Client key obtained from StackOverflow
+| accessToken| String     | Access token obtained from StackOverflow.
+| postIds    | String     | Ids of the posts.
+| pageNumber | Number     | Number of the page
+| pageSize   | Number     | Size of the page
+| fromDate   | Number     | Defines the range of creation_date (unixtime format)
+| toDate     | Number     | Defines the range of creation_date (unixtime format)
+
+## StackOverflow.getRevisionsByIds
+Returns edit revisions identified by revisionsIds
+
+| Field      | Type       | Description
+|------------|------------|----------
+| clientKey  | credentials| Client key obtained from StackOverflow
+| accessToken| String     | Access token obtained from StackOverflow.
+| revisionIds| String     | Ids of the revisions.
+| pageNumber | Number     | Number of the page
+| pageSize   | Number     | Size of the page
+| fromDate   | Number     | Defines the range of creation_date (unixtime format)
+| toDate     | Number     | Defines the range of creation_date (unixtime format)
+
+## StackOverflow.getPostsSuggestedEdits
+Returns suggested edits on the posts identified in ids.
+
+| Field       | Type       | Description
+|-------------|------------|----------
+| clientKey   | credentials| Client key obtained from StackOverflow
+| accessToken | String     | Access token obtained from StackOverflow.
+| postIds     | String     | Post Ids separated by semicolon
+| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
+| pageNumber  | Number     | Number of the page
+| pageSize    | Number     | Size of the page
+| fromDate    | Number     | Defines the range of creation_date (unixtime format)
+| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getAllSuggestedEdits
+Returns all the suggested edits in the systems.
+
+| Field       | Type       | Description
+|-------------|------------|----------
+| clientKey   | credentials| Client key obtained from StackOverflow
+| accessToken | String     | Access token obtained from StackOverflow.
+| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
+| pageNumber  | Number     | Number of the page
+| pageSize    | Number     | Size of the page
+| fromDate    | Number     | Defines the range of creation_date (unixtime format)
+| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getSuggestedEditsByIds
+Returns suggested edits identified in editIds
+
+| Field       | Type       | Description
+|-------------|------------|----------
+| clientKey   | credentials| Client key obtained from StackOverflow
+| accessToken | String     | Access token obtained from StackOverflow.
+| editIds     | String     | Edit Ids separated by semicolon
+| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
+| pageNumber  | Number     | Number of the page
+| pageSize    | Number     | Size of the page
+| fromDate    | Number     | Defines the range of creation_date (unixtime format)
+| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getMySuggestedEdits
+Returns the suggested edits the user identified by accessToken has submitted.
+
+| Field       | Type       | Description
+|-------------|------------|----------
+| clientKey   | credentials| Client key obtained from StackOverflow
+| accessToken | String     | Access token obtained from StackOverflow.
+| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
+| pageNumber  | Number     | Number of the page
+| pageSize    | Number     | Size of the page
+| fromDate    | Number     | Defines the range of creation_date (unixtime format)
+| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getUsersSuggestedEdits
+Returns the suggested edits a users in userIds have submitted.
+
+| Field       | Type       | Description
+|-------------|------------|----------
+| clientKey   | credentials| Client key obtained from StackOverflow
+| accessToken | String     | Access token obtained from StackOverflow.
+| userIds     | String     | User Ids separated by semicolon
+| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
+| pageNumber  | Number     | Number of the page
+| pageSize    | Number     | Size of the page
+| fromDate    | Number     | Defines the range of creation_date (unixtime format)
+| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getTags
+Returns the tags found on a site.
+
+| Field       | Type  | Description
+|-------------|-------|----------
+| inName      | String| Filters down to tags that contain a certain substring
+| sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
+| pageNumber  | Number| Number of the page
+| pageSize    | Number| Size of the page
+| fromDate    | Number| Defines the range of creation_date (unixtime format)
+| toDate      | Number| Defines the range of creation_date (unixtime format)
+| min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getModeratorTags
+Returns the tags found on a site that only moderators can use.
+
+| Field       | Type  | Description
+|-------------|-------|----------
+| inName      | String| Filters down to tags that contain a certain substring
+| sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
+| pageNumber  | Number| Number of the page
+| pageSize    | Number| Size of the page
+| fromDate    | Number| Defines the range of creation_date (unixtime format)
+| toDate      | Number| Defines the range of creation_date (unixtime format)
+| min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getRequiredTags
+Returns the tags found on a site that fulfill required tag constraints on questions.
+
+| Field       | Type  | Description
+|-------------|-------|----------
+| inName      | String| Filters down to tags that contain a certain substring
+| sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
+| pageNumber  | Number| Number of the page
+| pageSize    | Number| Size of the page
+| fromDate    | Number| Defines the range of creation_date (unixtime format)
+| toDate      | Number| Defines the range of creation_date (unixtime format)
+| min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getTagsInfo
+Returns tag objects representing the tags in tagNames found on the site.
+
+| Field       | Type  | Description
+|-------------|-------|----------
+| tagNames    | String| List of tag names separated by semicolon
+| sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
+| pageNumber  | Number| Number of the page
+| pageSize    | Number| Size of the page
+| fromDate    | Number| Defines the range of creation_date (unixtime format)
+| toDate      | Number| Defines the range of creation_date (unixtime format)
+| min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getRelatedTags
+Returns the tags that are most related to those in tagNames.
+
+| Field     | Type  | Description
+|-----------|-------|----------
+| tagNames  | String| List of tag names separated by semicolon
+| pageNumber| Number| Number of the page
+| pageSize  | Number| Size of the page
+
+## StackOverflow.getMyTags
+Returns the tags the user identified by the accessToken passed is active in.
+
+| Field       | Type       | Description
+|-------------|------------|----------
+| clientKey   | credentials| Client key obtained from StackOverflow
+| accessToken | String     | Access token obtained from StackOverflow.
+| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String     | Parameter to sort by. Possible values: popular(default), activity, name.
+| pageNumber  | Number     | Number of the page
+| pageSize    | Number     | Size of the page
+| fromDate    | Number     | Defines the range of creation_date (unixtime format)
+| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getUsersTags
+Returns the tags the users identified in userIds have been active in.
+
+| Field       | Type       | Description
+|-------------|------------|----------
+| clientKey   | credentials| Client key obtained from StackOverflow
+| accessToken | String     | Access token obtained from StackOverflow.
+| userIds     | String     | Ids of users
+| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String     | Parameter to sort by. Possible values: popular(default), activity, name.
+| pageNumber  | Number     | Number of the page
+| pageSize    | Number     | Size of the page
+| fromDate    | Number     | Defines the range of creation_date (unixtime format)
+| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getSingleTagTopAnswerers
+Returns the top 30 answerers active in a single tag, of either all-time or the last 30 days.
+
+| Field     | Type  | Description
+|-----------|-------|----------
+| tagName   | String| Name of the tag
+| period    | String| Period of the selection. Possible valued: all_time(default), month
+| pageNumber| Number| Number of the page
+| pageSize  | Number| Size of the page
+
+## StackOverflow.getSingleTagTopAskers
+Returns the top 30 askers active in a single tag, of either all-time or the last 30 days.
+
+| Field     | Type  | Description
+|-----------|-------|----------
+| tagName   | String| Name of the tag
+| period    | String| Period of the selection. Possible valued: all_time(default), month
+| pageNumber| Number| Number of the page
+| pageSize  | Number| Size of the page
+
+## StackOverflow.getAllTagsSynonyms
+Returns all tag synonyms found a site.
+
+| Field       | Type  | Description
+|-------------|-------|----------
+| sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String| Parameter to sort by. Possible values: creation(default), activity, applied.
+| pageNumber  | Number| Number of the page
+| pageSize    | Number| Size of the page
+| fromDate    | Number| Defines the range of creation_date (unixtime format)
+| toDate      | Number| Defines the range of creation_date (unixtime format)
+| min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getSynonymsForTags
+Gets all the synonyms that point to the tags identified in tagNames
+
+| Field       | Type  | Description
+|-------------|-------|----------
+| tagNames    | String| list of tags
+| sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | String| Parameter to sort by. Possible values: creation(default), activity, applied.
+| pageNumber  | Number| Number of the page
+| pageSize    | Number| Size of the page
+| fromDate    | Number| Defines the range of creation_date (unixtime format)
+| toDate      | Number| Defines the range of creation_date (unixtime format)
+| min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+
+## StackOverflow.getWikisForTags
+Gets all the synonyms that point to the tags identified in tagNames
+
+| Field     | Type  | Description
+|-----------|-------|----------
+| tagNames  | String| list of tags
+| pageNumber| Number| Number of the page
+| pageSize  | Number| Size of the page
+
+## StackOverflow.getMyTopAnswerTags
+Returns the user identified by accessToken's top 30 tags by answer score.
+
+| Field      | Type       | Description
+|------------|------------|----------
+| clientKey  | credentials| Client key obtained from StackOverflow
+| accessToken| String     | Access token obtained from StackOverflow.
+| pageNumber | Number     | Number of the page
+| pageSize   | Number     | Size of the page
+
+## StackOverflow.getMyTopQuestionTags
+Returns the user identified by accessToken's top 30 tags by question score.
+
+| Field      | Type       | Description
+|------------|------------|----------
+| clientKey  | credentials| Client key obtained from StackOverflow
+| accessToken| String     | Access token obtained from StackOverflow.
+| pageNumber | Number     | Number of the page
+| pageSize   | Number     | Size of the page
+
+## StackOverflow.getMyTopTags
+Returns the user identified by accessToken's top 30 tags by combined question and answer score.
+
+| Field      | Type       | Description
+|------------|------------|----------
+| clientKey  | credentials| Client key obtained from StackOverflow
+| accessToken| String     | Access token obtained from StackOverflow.
+| pageNumber | Number     | Number of the page
+| pageSize   | Number     | Size of the page
+
+## StackOverflow.getUserTopAnswerTags
+Returns the user identified by userId top 30 tags by answer score.
+
+| Field      | Type       | Description
+|------------|------------|----------
+| clientKey  | credentials| Client key obtained from StackOverflow
+| accessToken| String     | Access token obtained from StackOverflow.
+| userId     | String     | id of the user
+| pageNumber | Number     | Number of the page
+| pageSize   | Number     | Size of the page
+
+## StackOverflow.getUserTopQuestionTags
+Returns the user identified by userId top 30 tags by question score.
+
+| Field      | Type       | Description
+|------------|------------|----------
+| clientKey  | credentials| Client key obtained from StackOverflow
+| accessToken| String     | Access token obtained from StackOverflow.
+| userId     | String     | id of the user
+| pageNumber | Number     | Number of the page
+| pageSize   | Number     | Size of the page
+
+## StackOverflow.getUserTopTags
+Returns the user identified by userId top 30 tags by combined question and answer score.
+
+| Field      | Type       | Description
+|------------|------------|----------
+| clientKey  | credentials| Client key obtained from StackOverflow
+| accessToken| String     | Access token obtained from StackOverflow.
+| userId     | String     | id of the user
+| pageNumber | Number     | Number of the page
+| pageSize   | Number     | Size of the page
+
+## StackOverflow.search
+Returns the user identified by userId top 30 tags by combined question and answer score.
+
+| Field        | Type   | Description
+|--------------|--------|----------
+| searchString | String | A free form text parameter, will match all question properties based on an undocumented algorithm.
+| sortingOrder | String | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy       | String | Parameter to sort by. Possible values: activity(default), creation, votes, relevance.
+| pageNumber   | Number | Number of the page
+| pageSize     | Number | Size of the page
+| fromDate     | Number | Defines the range of creation_date (unixtime format)
+| toDate       | Number | Defines the range of creation_date (unixtime format)
+| min          | Number | Specify the range of a field must fall in (that field being specified by sortBy)
+| max          | Number | Specify the range of a field must fall in (that field being specified by sortBy)
+| accepted     | Boolean| true to return only questions with accepted answers, false to return only those without.
+| minAnswers   | Number | The minimum number of answers returned questions must have
+| questionBody | String | Text which must appear in returned questions' bodies.
+| closed       | Boolean| true to return only closed questions, false to return only open ones
+| migrated     | Boolean| true to return only questions migrated away from a site, false to return only those not.
+| notice       | Boolean| true to return only questions with post notices, false to return only those without.
+| exceptTags   | String | A semicolon delimited list of tags, none of which will be present on returned questions. At least one additional parameter must be set if exceptTags is set, for performance reasons.
+| withTags     | String | A semicolon delimited list of tags, of which at least one will be present on all returned questions.
+| questionTitle| String | Text which must appear in returned questions' titles.
+| questionerId | Number | The id of the user who must own the questions returned.
+| withUrl      | String | A url which must be contained in a post, may include a wildcard.
+| minViews     | Number | The minimum number of views returned questions must have.
+| wiki         | Boolean| True to return only community wiki questions, false to return only non-community wiki ones.
+
