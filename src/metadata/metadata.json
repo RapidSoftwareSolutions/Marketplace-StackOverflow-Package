@@ -4821,7 +4821,7 @@
           "name": "tagNames",
           "type": "String",
           "info": "List of tag names separated by semicolon",
-          "required": false
+          "required": true
         },
         {
           "name": "sortingOrder",
@@ -4888,7 +4888,7 @@
           "name": "tagNames",
           "type": "String",
           "info": "List of tag names separated by semicolon",
-          "required": false
+          "required": true
         },
         {
           "name": "pageNumber",
