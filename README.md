@@ -58,7 +58,7 @@ Returns information about the user with provided Ids
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | String     | Ids of the user separated by semicolon.
+| userIds     | Array      | Ids of the user as array.
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
 | pageNumber  | Number     | Number of the page
@@ -165,7 +165,7 @@ Returns answers in the system with provided Ids.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| answerIds   | String     | List of ids separated by semicolon.
+| answerIds   | Array      | List of ids as array.
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
@@ -266,7 +266,7 @@ Gets the answers to a set of questions identified in ids.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| questionIds | String     | Question ids separated by semicolon
+| questionIds | Array      | Question ids as array
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
@@ -309,7 +309,7 @@ Returns the answers the users in userIds have posted.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | String     | Ids of the users separated by semicolon.
+| userIds     | Array      | Ids of the users as array.
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
@@ -378,7 +378,7 @@ Gets the badges identified in badgeIds.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| badgeIds    | String     | Badge Ids separated by semicolon
+| badgeIds    | Array      | Badge Ids as array
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: rank(default), name, type.
 | pageNumber  | Number     | Number of the page
@@ -457,7 +457,7 @@ Returns the badges earned by the users associated with the given userIds
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | String     | Ids of the users separated by semicolon.
+| userIds     | Array      | Ids of the users as array.
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: rank(default), name, type
 | pageNumber  | Number     | Number of the page
@@ -483,7 +483,7 @@ Gets the comments on a set of answers.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| answerIds   | String     | Answer Ids separated by semicolon
+| answerIds   | Array      | Answer Ids as array
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
@@ -516,7 +516,7 @@ Gets all the comments with commentIds.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| commentIds  | String     | Ids of the comments.
+| commentIds  | Array      | Ids of the comments.
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
@@ -608,7 +608,7 @@ Gets the comments on a set of posts.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| postIds     | String     | Post Ids separated by semicolon
+| postIds     | Array      | Post Ids as array
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
@@ -641,7 +641,7 @@ Gets the comments of users in userIds
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | String     | User Ids separated by semicolon
+| userIds     | Array      | User Ids as array
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
@@ -675,7 +675,7 @@ Get the comments that the users in commentatorIds have posted in reply to the si
 |---------------|------------|----------
 | clientKey     | credentials| Client key obtained from StackOverflow
 | accessToken   | String     | Access token obtained from StackOverflow.
-| commentatorIds| String     | Commentators' Ids
+| commentatorIds| Array      | Commentators' Ids
 | userId        | Number     | User Id
 | sortingOrder  | String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy        | String     | Parameter to sort by. Possible values: creation(default), votes.
@@ -709,7 +709,7 @@ Returns the comments mentioning the users in userIds.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | String     | Ids of users separated by semicolon
+| userIds     | Array      | Ids of users as array
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
@@ -795,7 +795,7 @@ Returns all of a user's associated accounts, given their userIds
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | String     | List of user ids separated by semicolon.
+| userIds     | Array      | List of user ids as array.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
 | accountTypes| String     | You can filter the accountTypes returned by this method with the types parameter. Specify, semicolon delimited, main_site or meta_site to filter by site.
@@ -892,7 +892,7 @@ Fetches posts (questions and answers) on the site with provided Ids.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| postIds     | String     | Ids of posts.
+| postIds     | Array      | Ids of posts.
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
@@ -925,7 +925,7 @@ Fetches posts (questions and answers) on the site made by users with provided Id
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | String     | Ids of users.
+| userIds     | Array      | Ids of users.
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
@@ -979,7 +979,7 @@ Returns the reputation on a site for the user identified by provided userIds.
 |------------|------------|----------
 | clientKey  | credentials| Client key obtained from StackOverflow
 | accessToken| String     | Access token obtained from StackOverflow.
-| userIds    | String     | Ids of the users.
+| userIds    | Array      | Ids of the users.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
 | fromDate   | Number     | Defines the range of creation_date (unixtime format)
@@ -1014,7 +1014,7 @@ Returns edit revisions for the posts identified in postsIds
 |------------|------------|----------
 | clientKey  | credentials| Client key obtained from StackOverflow
 | accessToken| String     | Access token obtained from StackOverflow.
-| postIds    | String     | Ids of the posts.
+| postIds    | Array      | Ids of the posts.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
 | fromDate   | Number     | Defines the range of creation_date (unixtime format)
@@ -1027,7 +1027,7 @@ Returns edit revisions identified by revisionsIds
 |------------|------------|----------
 | clientKey  | credentials| Client key obtained from StackOverflow
 | accessToken| String     | Access token obtained from StackOverflow.
-| revisionIds| String     | Ids of the revisions.
+| revisionIds| Array      | Ids of the revisions.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
 | fromDate   | Number     | Defines the range of creation_date (unixtime format)
@@ -1040,7 +1040,7 @@ Returns suggested edits on the posts identified in ids.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| postIds     | String     | Post Ids separated by semicolon
+| postIds     | Array      | Post Ids as array
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
@@ -1073,7 +1073,7 @@ Returns suggested edits identified in editIds
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| editIds     | String     | Edit Ids separated by semicolon
+| editIds     | Array      | Edit Ids as array
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
@@ -1106,7 +1106,7 @@ Returns the suggested edits a users in userIds have submitted.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | String     | User Ids separated by semicolon
+| userIds     | Array      | User Ids as array
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
@@ -1166,7 +1166,7 @@ Returns tag objects representing the tags in tagNames found on the site.
 
 | Field       | Type  | Description
 |-------------|-------|----------
-| tagNames    | String| List of tag names separated by semicolon
+| tagNames    | Array | List of tag names as array
 | sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
 | pageNumber  | Number| Number of the page
@@ -1181,7 +1181,7 @@ Returns the tags that are most related to those in tagNames.
 
 | Field     | Type  | Description
 |-----------|-------|----------
-| tagNames  | String| List of tag names separated by semicolon
+| tagNames  | Array | List of tag names as array
 | pageNumber| Number| Number of the page
 | pageSize  | Number| Size of the page
 
@@ -1208,7 +1208,7 @@ Returns the tags the users identified in userIds have been active in.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | String     | Ids of users
+| userIds     | Array      | Ids of users
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: popular(default), activity, name.
 | pageNumber  | Number     | Number of the page

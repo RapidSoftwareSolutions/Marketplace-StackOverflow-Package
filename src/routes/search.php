@@ -37,11 +37,21 @@ $app->post('/api/StackOverflow/search', function ($request, $response, $args) {
     };
 
     if (isset($post_data['args']['fromDate']) && (strlen($post_data['args']['fromDate'])) > 0) {
-        $body['fromdate'] = $post_data['args']['fromDate'];
+        if (is_numeric($post_data['args']['fromDate'])) {
+            $body['fromdate'] = $post_data['args']['fromDate'];
+        } else {
+            $dateTime = new DateTime($post_data['args']['fromDate']);
+            $body['fromdate'] = $dateTime->format('U');
+        }
     };
 
     if (isset($post_data['args']['toDate']) && (strlen($post_data['args']['toDate'])) > 0) {
-        $body['todate'] = $post_data['args']['toDate'];
+        if (is_numeric($post_data['args']['toDate'])) {
+            $body['todate'] = $post_data['args']['toDate'];
+        } else {
+            $dateTime = new DateTime($post_data['args']['toDate']);
+            $body['todate'] = $dateTime->format('U');
+        }
     };
 
     if (isset($post_data['args']['min']) && (strlen($post_data['args']['min'])) > 0) {
@@ -71,10 +81,10 @@ $app->post('/api/StackOverflow/search', function ($request, $response, $args) {
         $body['notice'] = $post_data['args']['notice'];
     };
     if (isset($post_data['args']['exceptTags']) && (strlen($post_data['args']['exceptTags'])) > 0) {
-        $body['nottagged'] = $post_data['args']['exceptTags'];
+        $body['nottagged'] = implode(';', $post_data['args']['exceptTags']);
     };
     if (isset($post_data['args']['withTags']) && (strlen($post_data['args']['withTags'])) > 0) {
-        $body['tagged'] = $post_data['args']['withTags'];
+        $body['tagged'] = implode(';', $post_data['args']['withTags']);
     };
     if (isset($post_data['args']['questionTitle']) && (strlen($post_data['args']['questionTitle'])) > 0) {
         $body['title'] = $post_data['args']['questionTitle'];

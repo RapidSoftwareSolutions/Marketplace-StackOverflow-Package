@@ -4,7 +4,7 @@ $app->post('/api/StackOverflow/getUsersReplyComments', function ($request, $resp
 
     //checking properly formed json
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['accessToken', 'clientKey','commentatorIds', 'userId']);
+    $validateRes = $checkRequest->validate($request, ['accessToken', 'clientKey', 'commentatorIds', 'userId']);
     if (!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback'] == 'error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {
@@ -12,7 +12,8 @@ $app->post('/api/StackOverflow/getUsersReplyComments', function ($request, $resp
     }
 
     //forming request to vendor API
-    $query_str = $settings['api_url'] . 'users/'.$post_data['args']['commentatorIds'].'/comments/'.$post_data['args']['userId'];
+    $commentatorIds = implode(';', $post_data['args']['commentatorIds']);
+    $query_str = $settings['api_url'] . 'users/' . $commentatorIds . '/comments/' . $post_data['args']['userId'];
     $body = array();
 
     $body['access_token'] = $post_data['args']['accessToken'];
@@ -39,11 +40,21 @@ $app->post('/api/StackOverflow/getUsersReplyComments', function ($request, $resp
     };
 
     if (isset($post_data['args']['fromDate']) && (strlen($post_data['args']['fromDate'])) > 0) {
-        $body['fromdate'] = $post_data['args']['fromDate'];
+        if (is_numeric($post_data['args']['fromDate'])) {
+            $body['fromdate'] = $post_data['args']['fromDate'];
+        } else {
+            $dateTime = new DateTime($post_data['args']['fromDate']);
+            $body['fromdate'] = $dateTime->format('U');
+        }
     };
 
     if (isset($post_data['args']['toDate']) && (strlen($post_data['args']['toDate'])) > 0) {
-        $body['todate'] = $post_data['args']['toDate'];
+        if (is_numeric($post_data['args']['toDate'])) {
+            $body['todate'] = $post_data['args']['toDate'];
+        } else {
+            $dateTime = new DateTime($post_data['args']['toDate']);
+            $body['todate'] = $dateTime->format('U');
+        }
     };
 
     if (isset($post_data['args']['min']) && (strlen($post_data['args']['min'])) > 0) {

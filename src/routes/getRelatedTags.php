@@ -12,7 +12,8 @@ $app->post('/api/StackOverflow/getRelatedTags', function ($request, $response, $
     }
 
     //forming request to vendor API
-    $query_str = $settings['api_url'] . 'tags/'.$post_data['args']['tagNames'].'/related';
+    $tagNames = implode(';', $post_data['args']['tagNames']);
+    $query_str = $settings['api_url'] . 'tags/' . $tagNames . '/related';
     $body = array();
 
     if (isset($post_data['args']['pageNumber']) && (strlen($post_data['args']['pageNumber'])) > 0) {

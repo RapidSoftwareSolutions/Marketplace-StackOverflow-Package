@@ -12,7 +12,8 @@ $app->post('/api/StackOverflow/getPostsByUserIds', function ($request, $response
     }
 
     //forming request to vendor API
-    $query_str = $settings['api_url'] . 'users/'.$post_data['args']['userIds'].'/posts';
+    $userIds = implode(';', $post_data['args']['userIds']);
+    $query_str = $settings['api_url'] . 'users/' . $userIds . '/posts';
     $body = array();
 
     $body['access_token'] = $post_data['args']['accessToken'];
@@ -39,11 +40,21 @@ $app->post('/api/StackOverflow/getPostsByUserIds', function ($request, $response
     };
 
     if (isset($post_data['args']['fromDate']) && (strlen($post_data['args']['fromDate'])) > 0) {
-        $body['fromdate'] = $post_data['args']['fromDate'];
+        if (is_numeric($post_data['args']['fromDate'])) {
+            $body['fromdate'] = $post_data['args']['fromDate'];
+        } else {
+            $dateTime = new DateTime($post_data['args']['fromDate']);
+            $body['fromdate'] = $dateTime->format('U');
+        }
     };
 
     if (isset($post_data['args']['toDate']) && (strlen($post_data['args']['toDate'])) > 0) {
-        $body['todate'] = $post_data['args']['toDate'];
+        if (is_numeric($post_data['args']['toDate'])) {
+            $body['todate'] = $post_data['args']['toDate'];
+        } else {
+            $dateTime = new DateTime($post_data['args']['toDate']);
+            $body['todate'] = $dateTime->format('U');
+        }
     };
 
     if (isset($post_data['args']['min']) && (strlen($post_data['args']['min'])) > 0) {

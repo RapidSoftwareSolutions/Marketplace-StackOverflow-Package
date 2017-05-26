@@ -27,7 +27,7 @@ $app->post('/api/StackOverflow/getAllEvents', function ($request, $response, $ar
     };
 
     if (isset($post_data['args']['fromDate']) && (strlen($post_data['args']['fromDate'])) > 0) {
-        $body['fromdate'] = $post_data['args']['fromDate'];
+        if (is_numeric($post_data['args']['fromDate'])) {             $body['fromdate'] = $post_data['args']['fromDate'];         } else {             $dateTime = new DateTime($post_data['args']['fromDate']);             $body['fromdate'] = $dateTime->format('U');         }
     };
 
     $body['site'] = 'stackoverflow';

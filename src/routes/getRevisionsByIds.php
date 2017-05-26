@@ -12,12 +12,12 @@ $app->post('/api/StackOverflow/getRevisionsByIds', function ($request, $response
     }
 
     //forming request to vendor API
-    $query_str = $settings['api_url'] . 'revisions/'.$post_data['args']['revisionIds'];
+    $revisionIds = implode(';', $post_data['args']['revisionIds']);
+    $query_str = $settings['api_url'] . 'revisions/' . $revisionIds;
     $body = array();
 
     $body['access_token'] = $post_data['args']['accessToken'];
     $body['key'] = $post_data['args']['clientKey'];
-
 
 
     if (isset($post_data['args']['pageNumber']) && (strlen($post_data['args']['pageNumber'])) > 0) {
@@ -29,11 +29,21 @@ $app->post('/api/StackOverflow/getRevisionsByIds', function ($request, $response
     };
 
     if (isset($post_data['args']['fromDate']) && (strlen($post_data['args']['fromDate'])) > 0) {
-        $body['fromdate'] = $post_data['args']['fromDate'];
+        if (is_numeric($post_data['args']['fromDate'])) {
+            $body['fromdate'] = $post_data['args']['fromDate'];
+        } else {
+            $dateTime = new DateTime($post_data['args']['fromDate']);
+            $body['fromdate'] = $dateTime->format('U');
+        }
     };
 
     if (isset($post_data['args']['toDate']) && (strlen($post_data['args']['toDate'])) > 0) {
-        $body['todate'] = $post_data['args']['toDate'];
+        if (is_numeric($post_data['args']['toDate'])) {
+            $body['todate'] = $post_data['args']['toDate'];
+        } else {
+            $dateTime = new DateTime($post_data['args']['toDate']);
+            $body['todate'] = $dateTime->format('U');
+        }
     };
 
     $body['site'] = 'stackoverflow';
