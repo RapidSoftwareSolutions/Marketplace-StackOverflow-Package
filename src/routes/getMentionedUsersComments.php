@@ -12,7 +12,7 @@ $app->post('/api/StackOverflow/getMentionedUsersComments', function ($request, $
     }
 
     //forming request to vendor API
-    $userIds = implode(';', $post_data['args']['userIds']);
+    $userIds = is_array($post_data['args']['userIds']) ? implode(';', $post_data['args']['userIds']) : $post_data['args']['userIds'];
     $query_str = $settings['api_url'] . 'users/' . $userIds . '/mentioned';
     $body = array();
 

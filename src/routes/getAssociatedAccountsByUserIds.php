@@ -12,8 +12,8 @@ $app->post('/api/StackOverflow/getAssociatedAccountsByUserIds', function ($reque
     }
 
     //forming request to vendor API
-    $userIds = implode(';', $post_data['args']['userIds']);
-    $query_str = $settings['api_url'] . 'users/'.$userIds.'/associated';
+    $userIds = is_array($post_data['args']['userIds']) ? implode(';', $post_data['args']['userIds']) : $post_data['args']['userIds'];
+    $query_str = $settings['api_url'] . 'users/' . $userIds . '/associated';
     $body = array();
 
     $body['access_token'] = $post_data['args']['accessToken'];

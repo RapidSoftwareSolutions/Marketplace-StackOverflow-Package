@@ -12,7 +12,7 @@ $app->post('/api/StackOverflow/getUsersReplyComments', function ($request, $resp
     }
 
     //forming request to vendor API
-    $commentatorIds = implode(';', $post_data['args']['commentatorIds']);
+    $commentatorIds =is_array($post_data['args']['commentatorIds']) ? implode(';', $post_data['args']['commentatorIds']) : $post_data['args']['commentatorIds'];
     $query_str = $settings['api_url'] . 'users/' . $commentatorIds . '/comments/' . $post_data['args']['userId'];
     $body = array();
 

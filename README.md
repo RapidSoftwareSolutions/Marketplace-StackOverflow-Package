@@ -158,7 +158,7 @@ Returns all the undeleted answers in the system.
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
-## StackOverflow.getAnswersByIds
+## StackOverflow.getAnswersBgetAnswersByIds
 Returns answers in the system with provided Ids.
 
 | Field       | Type       | Description
@@ -343,7 +343,7 @@ Returns the top 30 answers the user associated with the given userId has posted 
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| tagList     | String     | List of tags.
+| tagList     | Array      | Array of tags.
 | userId      | Number     | Id of the user
 | sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
@@ -1257,7 +1257,7 @@ Gets all the synonyms that point to the tags identified in tagNames
 
 | Field       | Type  | Description
 |-------------|-------|----------
-| tagNames    | String| list of tags
+| tagNames    | Array | Array of tags
 | sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | String| Parameter to sort by. Possible values: creation(default), activity, applied.
 | pageNumber  | Number| Number of the page
@@ -1272,7 +1272,7 @@ Gets all the synonyms that point to the tags identified in tagNames
 
 | Field     | Type  | Description
 |-----------|-------|----------
-| tagNames  | String| list of tags
+| tagNames  | Array | Array of tags
 | pageNumber| Number| Number of the page
 | pageSize  | Number| Size of the page
 

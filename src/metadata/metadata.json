@@ -759,9 +759,14 @@
         },
         {
           "name": "answerIds",
-          "type": "String",
+          "type": "List",
           "info": "List of ids array.",
-          "required": true
+          "required": true,
+          "structure": {
+            "name": "answerId",
+            "type": "Number",
+            "info": "Id of each anser"
+          }
         },
         {
           "name": "sortingOrder",
@@ -1577,9 +1582,14 @@
         },
         {
           "name": "tagList",
-          "type": "String",
+          "type": "List",
           "info": "List of tags.",
-          "required": true
+          "required": true,
+          "structure": {
+            "name": "tagName",
+            "type": "String",
+            "info": "Name of each tag"
+          }
         },
         {
           "name": "userId",
@@ -2178,9 +2188,14 @@
         },
         {
           "name": "userIds",
-          "type": "String",
+          "type": "List",
           "info": "Ids of the users array.",
-          "required": true
+          "required": true,
+          "structure": {
+            "name": "userId",
+            "type": "Number",
+            "info": "Id of each user"
+          }
         },
         {
           "name": "sortingOrder",
@@ -6065,9 +6080,14 @@
       "args": [
         {
           "name": "tagNames",
-          "type": "String",
+          "type": "List",
           "info": "list of tags",
-          "required": true
+          "required": true,
+          "structure": {
+            "name": "tagName",
+            "type": "String",
+            "info": "Tag"
+          }
         },
         {
           "name": "sortingOrder",
@@ -6144,9 +6164,14 @@
       "args": [
         {
           "name": "tagNames",
-          "type": "String",
+          "type": "List",
           "info": "list of tags",
-          "required": true
+          "required": true,
+          "structure": {
+            "name": "tagName",
+            "type": "String",
+            "info": "Name of each tag"
+          }
         },
         {
           "name": "pageNumber",

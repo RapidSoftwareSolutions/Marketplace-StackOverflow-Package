@@ -12,7 +12,7 @@ $app->post('/api/StackOverflow/getCommentsByIds', function ($request, $response,
     }
 
     //forming request to vendor API
-    $commentIds = implode(';', $post_data['args']['commentIds']);
+    $commentIds = is_array($post_data['args']['commentIds']) ? implode(';', $post_data['args']['commentIds']) : $post_data['args']['commentIds'];
     $query_str = $settings['api_url'] . 'comments/' . $commentIds;
     $body = array();
 

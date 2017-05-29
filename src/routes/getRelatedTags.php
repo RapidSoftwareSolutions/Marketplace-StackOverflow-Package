@@ -12,7 +12,7 @@ $app->post('/api/StackOverflow/getRelatedTags', function ($request, $response, $
     }
 
     //forming request to vendor API
-    $tagNames = implode(';', $post_data['args']['tagNames']);
+    $tagNames = is_array($post_data['args']['tagNames']) ? implode(';', $post_data['args']['tagNames']) : $post_data['args']['tagNames'];
     $query_str = $settings['api_url'] . 'tags/' . $tagNames . '/related';
     $body = array();
 

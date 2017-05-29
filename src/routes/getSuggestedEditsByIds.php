@@ -12,8 +12,8 @@ $app->post('/api/StackOverflow/getSuggestedEditsByIds', function ($request, $res
     }
 
     //forming request to vendor API
-    $editIds = implode(';', $post_data['args']['editIds']);
-    $query_str = $settings['api_url'] . '/suggested-edits/'.$editIds;
+    $editIds =is_array($post_data['args']['editIds']) ? implode(';', $post_data['args']['editIds']) : $post_data['args']['editIds'];
+    $query_str = $settings['api_url'] . '/suggested-edits/' . $editIds;
     $body = array();
 
     $body['access_token'] = $post_data['args']['accessToken'];
@@ -40,11 +40,21 @@ $app->post('/api/StackOverflow/getSuggestedEditsByIds', function ($request, $res
     };
 
     if (isset($post_data['args']['fromDate']) && (strlen($post_data['args']['fromDate'])) > 0) {
-        if (is_numeric($post_data['args']['fromDate'])) {             $body['fromdate'] = $post_data['args']['fromDate'];         } else {             $dateTime = new DateTime($post_data['args']['fromDate']);             $body['fromdate'] = $dateTime->format('U');         }
+        if (is_numeric($post_data['args']['fromDate'])) {
+            $body['fromdate'] = $post_data['args']['fromDate'];
+        } else {
+            $dateTime = new DateTime($post_data['args']['fromDate']);
+            $body['fromdate'] = $dateTime->format('U');
+        }
     };
 
     if (isset($post_data['args']['toDate']) && (strlen($post_data['args']['toDate'])) > 0) {
-          if (is_numeric($post_data['args']['toDate'])) {             $body['todate'] = $post_data['args']['toDate'];         } else {             $dateTime = new DateTime($post_data['args']['toDate']);             $body['todate'] = $dateTime->format('U');         }
+        if (is_numeric($post_data['args']['toDate'])) {
+            $body['todate'] = $post_data['args']['toDate'];
+        } else {
+            $dateTime = new DateTime($post_data['args']['toDate']);
+            $body['todate'] = $dateTime->format('U');
+        }
     };
 
     if (isset($post_data['args']['min']) && (strlen($post_data['args']['min'])) > 0) {

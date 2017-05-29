@@ -12,7 +12,7 @@ $app->post('/api/StackOverflow/getUsersTags', function ($request, $response, $ar
     }
 
     //forming request to vendor API
-    $userIds = implode(';', $post_data['args']['userIds']);
+    $userIds =is_array($post_data['args']['userIds']) ?  implode(';', $post_data['args']['userIds']) : $post_data['args']['userIds'];
     $query_str = $settings['api_url'] . 'users/' . $userIds . '/tags';
     $body = array();
 

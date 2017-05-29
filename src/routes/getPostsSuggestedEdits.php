@@ -12,7 +12,7 @@ $app->post('/api/StackOverflow/getPostsSuggestedEdits', function ($request, $res
     }
 
     //forming request to vendor API
-    $postIds = implode(';', $post_data['args']['postIds']);
+    $postIds = is_array($post_data['args']['postIds']) ? implode(';', $post_data['args']['postIds']) : $post_data['args']['postIds'];
     $query_str = $settings['api_url'] . 'posts/' . $postIds . '/suggested-edits';
     $body = array();
 

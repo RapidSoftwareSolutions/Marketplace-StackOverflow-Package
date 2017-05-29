@@ -12,7 +12,7 @@ $app->post('/api/StackOverflow/getRevisionsByIds', function ($request, $response
     }
 
     //forming request to vendor API
-    $revisionIds = implode(';', $post_data['args']['revisionIds']);
+    $revisionIds = is_array($post_data['args']['revisionIds']) ? implode(';', $post_data['args']['revisionIds']) : $post_data['args']['revisionIds'];
     $query_str = $settings['api_url'] . 'revisions/' . $revisionIds;
     $body = array();
 

@@ -12,7 +12,7 @@ $app->post('/api/StackOverflow/getUserTimeline', function ($request, $response, 
     }
 
     //forming request to vendor API
-    $query_str = $settings['api_url'] . 'users/'.$post_data['args']['userId'].'/timeline';
+    $query_str = $settings['api_url'] . 'users/' . $post_data['args']['userId'] . '/timeline';
     $body = array();
     $body['site'] = 'stackoverflow';
     $body['access_token'] = $post_data['args']['accessToken'];
@@ -28,7 +28,12 @@ $app->post('/api/StackOverflow/getUserTimeline', function ($request, $response, 
 
     if (isset($post_data['args']['fromDate']) && (strlen($post_data['args']['fromDate'])) > 0) {
         if (is_numeric($post_data['args']['fromDate'])) {
-            if (is_numeric($post_data['args']['fromDate'])) {             $body['fromdate'] = $post_data['args']['fromDate'];         } else {             $dateTime = new DateTime($post_data['args']['fromDate']);             $body['fromdate'] = $dateTime->format('U');         }
+            if (is_numeric($post_data['args']['fromDate'])) {
+                $body['fromdate'] = $post_data['args']['fromDate'];
+            } else {
+                $dateTime = new DateTime($post_data['args']['fromDate']);
+                $body['fromdate'] = $dateTime->format('U');
+            }
         } else {
             $dateTime = new DateTime($post_data['args']['fromDate']);
             $body['fromdate'] = $dateTime->format('U');
@@ -37,7 +42,12 @@ $app->post('/api/StackOverflow/getUserTimeline', function ($request, $response, 
 
     if (isset($post_data['args']['toDate']) && (strlen($post_data['args']['toDate'])) > 0) {
         if (is_numeric($post_data['args']['toDate'])) {
-              if (is_numeric($post_data['args']['toDate'])) {             $body['todate'] = $post_data['args']['toDate'];         } else {             $dateTime = new DateTime($post_data['args']['toDate']);             $body['todate'] = $dateTime->format('U');         }
+            if (is_numeric($post_data['args']['toDate'])) {
+                $body['todate'] = $post_data['args']['toDate'];
+            } else {
+                $dateTime = new DateTime($post_data['args']['toDate']);
+                $body['todate'] = $dateTime->format('U');
+            }
         } else {
             $dateTime = new DateTime($post_data['args']['toDate']);
             $body['todate'] = $dateTime->format('U');

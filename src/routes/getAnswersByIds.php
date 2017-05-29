@@ -12,7 +12,8 @@ $app->post('/api/StackOverflow/getAnswersByIds', function ($request, $response, 
     }
 
     //forming request to vendor API
-    $query_str = $settings['api_url'] . 'answers/' . $post_data['args']['answerIds'];
+    $answerIds = is_array($post_data['args']['answerIds']) ? implode(';', $post_data['args']['answerIds']) : $post_data['args']['answerIds'];
+    $query_str = $settings['api_url'] . 'answers/' . $answerIds;
     $body = array();
     $body['site'] = 'stackoverflow';
     $body['access_token'] = $post_data['args']['accessToken'];

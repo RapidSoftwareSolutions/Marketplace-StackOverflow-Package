@@ -12,7 +12,8 @@ $app->post('/api/StackOverflow/getUserTopAnswersByTags', function ($request, $re
     }
 
     //forming request to vendor API
-    $query_str = $settings['api_url'] . 'users/' . $post_data['args']['userId'] . '/tags/' . $post_data['args']['tagList'] . '/top-answers';
+    $tagList = is_array($post_data['args']['tagList']) ? implode(';', $post_data['args']['tagList']) : $post_data['args']['tagList'];
+    $query_str = $settings['api_url'] . 'users/' . $post_data['args']['userId'] . '/tags/' . $tagList . '/top-answers';
     $body = array();
 
     $body['access_token'] = $post_data['args']['accessToken'];

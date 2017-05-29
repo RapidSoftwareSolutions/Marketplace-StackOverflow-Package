@@ -12,6 +12,7 @@ $app->post('/api/StackOverflow/getWikisForTags', function ($request, $response, 
     }
 
     //forming request to vendor API
+    $tagList = is_array($post_data['args']['tagNames']) ? implode(';', $post_data['args']['tagNames']) : $post_data['args']['tagNames'];
     $query_str = $settings['api_url'] . 'tags/'.$post_data['args']['tagNames'].'/wikis';
     $body = array();
 

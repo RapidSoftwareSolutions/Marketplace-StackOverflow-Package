@@ -12,7 +12,7 @@ $app->post('/api/StackOverflow/getUserNotifications', function ($request, $respo
     }
 
     //forming request to vendor API
-    $query_str = $settings['api_url'] . 'users/'.$post_data['args']['userId'].'/notifications';
+    $query_str = $settings['api_url'] . 'users/' . $post_data['args']['userId'] . '/notifications';
     $body = array();
     $body['site'] = 'stackoverflow';
     $body['access_token'] = $post_data['args']['accessToken'];
