@@ -46,8 +46,8 @@ Returns the user associated with the passed accessToken
 | sortBy      | String     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -63,8 +63,8 @@ Returns information about the user with provided Ids
 | sortBy      | String     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -80,8 +80,8 @@ Returns all users on a site.
 | sortBy      | String     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -96,8 +96,8 @@ Gets those users on a site who can exercise moderation powers. Note, employees o
 | sortBy      | String     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -112,8 +112,8 @@ Returns those users on a site who both have moderator powers, and were actually 
 | sortBy      | String     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -126,8 +126,8 @@ Get a subset of the actions of that have been taken by the users identified by a
 | accessToken| String     | Access token obtained from StackOverflow.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date (unixtime format)
-| toDate     | Number     | Defines the range of creation_date (unixtime format)
+| fromDate   | Number     | Defines the range of creation_date
+| toDate     | Number     | Defines the range of creation_date
 
 ## StackOverflow.getUserTimeline
 Get a subset of the actions of that have been taken by the users identified by id.
@@ -139,8 +139,8 @@ Get a subset of the actions of that have been taken by the users identified by i
 | userId     | Number     | Id of the user
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date (unixtime format)
-| toDate     | Number     | Defines the range of creation_date (unixtime format)
+| fromDate   | Number     | Defines the range of creation_date
+| toDate     | Number     | Defines the range of creation_date
 
 ## StackOverflow.getAllAnswers
 Returns all the undeleted answers in the system.
@@ -153,8 +153,8 @@ Returns all the undeleted answers in the system.
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -170,8 +170,8 @@ Returns answers in the system with provided Ids.
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -271,8 +271,8 @@ Gets the answers to a set of questions identified in ids.
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -297,8 +297,8 @@ Returns the answers owned by the user associated with the given accessToken.
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -314,8 +314,8 @@ Returns the answers the users in userIds have posted.
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -331,8 +331,8 @@ Returns the top 30 answers the user associated with the given accessToken has po
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -349,8 +349,8 @@ Returns the top 30 answers the user associated with the given userId has posted 
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -366,8 +366,8 @@ Returns all the badges in the system.
 | sortBy      | String     | Parameter to sort by. Possible values: rank(default), name, type.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -383,8 +383,8 @@ Gets the badges identified in badgeIds.
 | sortBy      | String     | Parameter to sort by. Possible values: rank(default), name, type.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -397,8 +397,8 @@ Returns recently awarded badges in the system.
 | accessToken| String     | Access token obtained from StackOverflow.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date (unixtime format)
-| toDate     | Number     | Defines the range of creation_date (unixtime format)
+| fromDate   | Number     | Defines the range of creation_date
+| toDate     | Number     | Defines the range of creation_date
 
 ## StackOverflow.getAllNamedBadges
 Gets all explicitly named badges in the system.
@@ -412,8 +412,8 @@ Gets all explicitly named badges in the system.
 | sortBy      | String     | Parameter to sort by. Possible values: rank(default), name.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -429,8 +429,8 @@ Gets all explicitly named badges in the system.
 | sortBy      | String     | Parameter to sort by. Possible values: rank(default), name.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -445,8 +445,8 @@ Returns the badges earned by the user associated with the given accessToken
 | sortBy      | String     | Parameter to sort by. Possible values: rank(default), name, type
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -462,8 +462,8 @@ Returns the badges earned by the users associated with the given userIds
 | sortBy      | String     | Parameter to sort by. Possible values: rank(default), name, type
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -488,8 +488,8 @@ Gets the comments on a set of answers.
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -504,8 +504,8 @@ Gets all the comments on the site.
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -521,8 +521,8 @@ Gets all the comments with commentIds.
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -613,8 +613,8 @@ Gets the comments on a set of posts.
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -629,8 +629,8 @@ Returns the comments owned by the user associated with the given accessToken.
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -646,8 +646,8 @@ Gets the comments of users in userIds
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -663,8 +663,8 @@ Returns the comments owned by the user associated with the given accessToken tha
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -681,8 +681,8 @@ Get the comments that the users in commentatorIds have posted in reply to the si
 | sortBy        | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber    | Number     | Number of the page
 | pageSize      | Number     | Size of the page
-| fromDate      | Number     | Defines the range of creation_date (unixtime format)
-| toDate        | Number     | Defines the range of creation_date (unixtime format)
+| fromDate      | Number     | Defines the range of creation_date
+| toDate        | Number     | Defines the range of creation_date
 | min           | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max           | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -697,8 +697,8 @@ Returns the comments mentioning the user associated with the given accessToken.
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -714,8 +714,8 @@ Returns the comments mentioning the users in userIds.
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -728,7 +728,7 @@ Returns a stream of events that have occurred on the site.
 | accessToken| String     | Access token obtained from StackOverflow.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date (unixtime format)
+| fromDate   | Number     | Defines the range of creation_date
 
 ## StackOverflow.getStackoverflowStatistics
 Returns a collection of statistics about the site.
@@ -810,8 +810,8 @@ Returns a summary of a user's activity across the Stack Exchange network, given 
 | userId       | Number     | Id of the user
 | pageNumber   | Number     | Number of the page
 | pageSize     | Number     | Size of the page
-| fromDate     | Number     | Defines the range of creation_date (unixtime format)
-| toDate       | Number     | Defines the range of creation_date (unixtime format)
+| fromDate     | Number     | Defines the range of creation_date
+| toDate       | Number     | Defines the range of creation_date
 | activityTypes| String     | Type of network activity
 
 ## StackOverflow.getMyActivity
@@ -823,8 +823,8 @@ Returns a summary of a user's activity across the Stack Exchange network associa
 | accessToken  | String     | Access token obtained from StackOverflow.
 | pageNumber   | Number     | Number of the page
 | pageSize     | Number     | Size of the page
-| fromDate     | Number     | Defines the range of creation_date (unixtime format)
-| toDate       | Number     | Defines the range of creation_date (unixtime format)
+| fromDate     | Number     | Defines the range of creation_date
+| toDate       | Number     | Defines the range of creation_date
 | activityTypes| String     | Type of network activity
 
 ## StackOverflow.getMyNotifications
@@ -880,8 +880,8 @@ Fetches all posts (questions and answers) on the site.
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -897,8 +897,8 @@ Fetches posts (questions and answers) on the site with provided Ids.
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -913,8 +913,8 @@ Fetches all posts (questions and answers) of the user with provided accessToken.
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -930,8 +930,8 @@ Fetches posts (questions and answers) on the site made by users with provided Id
 | sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -982,8 +982,8 @@ Returns the reputation on a site for the user identified by provided userIds.
 | userIds    | Array      | Ids of the users.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date (unixtime format)
-| toDate     | Number     | Defines the range of creation_date (unixtime format)
+| fromDate   | Number     | Defines the range of creation_date
+| toDate     | Number     | Defines the range of creation_date
 
 ## StackOverflow.getMyReputationHistory
 Returns the reputation history on a site for the user identified by provided accessToken.
@@ -1017,8 +1017,8 @@ Returns edit revisions for the posts identified in postsIds
 | postIds    | Array      | Ids of the posts.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date (unixtime format)
-| toDate     | Number     | Defines the range of creation_date (unixtime format)
+| fromDate   | Number     | Defines the range of creation_date
+| toDate     | Number     | Defines the range of creation_date
 
 ## StackOverflow.getRevisionsByIds
 Returns edit revisions identified by revisionsIds
@@ -1030,8 +1030,8 @@ Returns edit revisions identified by revisionsIds
 | revisionIds| Array      | Ids of the revisions.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date (unixtime format)
-| toDate     | Number     | Defines the range of creation_date (unixtime format)
+| fromDate   | Number     | Defines the range of creation_date
+| toDate     | Number     | Defines the range of creation_date
 
 ## StackOverflow.getPostsSuggestedEdits
 Returns suggested edits on the posts identified in ids.
@@ -1045,8 +1045,8 @@ Returns suggested edits on the posts identified in ids.
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1061,8 +1061,8 @@ Returns all the suggested edits in the systems.
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1078,8 +1078,8 @@ Returns suggested edits identified in editIds
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1094,8 +1094,8 @@ Returns the suggested edits the user identified by accessToken has submitted.
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1111,8 +1111,8 @@ Returns the suggested edits a users in userIds have submitted.
 | sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1126,8 +1126,8 @@ Returns the tags found on a site.
 | sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
 | pageNumber  | Number| Number of the page
 | pageSize    | Number| Size of the page
-| fromDate    | Number| Defines the range of creation_date (unixtime format)
-| toDate      | Number| Defines the range of creation_date (unixtime format)
+| fromDate    | Number| Defines the range of creation_date
+| toDate      | Number| Defines the range of creation_date
 | min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1141,8 +1141,8 @@ Returns the tags found on a site that only moderators can use.
 | sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
 | pageNumber  | Number| Number of the page
 | pageSize    | Number| Size of the page
-| fromDate    | Number| Defines the range of creation_date (unixtime format)
-| toDate      | Number| Defines the range of creation_date (unixtime format)
+| fromDate    | Number| Defines the range of creation_date
+| toDate      | Number| Defines the range of creation_date
 | min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1156,8 +1156,8 @@ Returns the tags found on a site that fulfill required tag constraints on questi
 | sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
 | pageNumber  | Number| Number of the page
 | pageSize    | Number| Size of the page
-| fromDate    | Number| Defines the range of creation_date (unixtime format)
-| toDate      | Number| Defines the range of creation_date (unixtime format)
+| fromDate    | Number| Defines the range of creation_date
+| toDate      | Number| Defines the range of creation_date
 | min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1171,8 +1171,8 @@ Returns tag objects representing the tags in tagNames found on the site.
 | sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
 | pageNumber  | Number| Number of the page
 | pageSize    | Number| Size of the page
-| fromDate    | Number| Defines the range of creation_date (unixtime format)
-| toDate      | Number| Defines the range of creation_date (unixtime format)
+| fromDate    | Number| Defines the range of creation_date
+| toDate      | Number| Defines the range of creation_date
 | min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1196,8 +1196,8 @@ Returns the tags the user identified by the accessToken passed is active in.
 | sortBy      | String     | Parameter to sort by. Possible values: popular(default), activity, name.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1213,8 +1213,8 @@ Returns the tags the users identified in userIds have been active in.
 | sortBy      | String     | Parameter to sort by. Possible values: popular(default), activity, name.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date (unixtime format)
-| toDate      | Number     | Defines the range of creation_date (unixtime format)
+| fromDate    | Number     | Defines the range of creation_date
+| toDate      | Number     | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1247,8 +1247,8 @@ Returns all tag synonyms found a site.
 | sortBy      | String| Parameter to sort by. Possible values: creation(default), activity, applied.
 | pageNumber  | Number| Number of the page
 | pageSize    | Number| Size of the page
-| fromDate    | Number| Defines the range of creation_date (unixtime format)
-| toDate      | Number| Defines the range of creation_date (unixtime format)
+| fromDate    | Number| Defines the range of creation_date
+| toDate      | Number| Defines the range of creation_date
 | min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1262,8 +1262,8 @@ Gets all the synonyms that point to the tags identified in tagNames
 | sortBy      | String| Parameter to sort by. Possible values: creation(default), activity, applied.
 | pageNumber  | Number| Number of the page
 | pageSize    | Number| Size of the page
-| fromDate    | Number| Defines the range of creation_date (unixtime format)
-| toDate      | Number| Defines the range of creation_date (unixtime format)
+| fromDate    | Number| Defines the range of creation_date
+| toDate      | Number| Defines the range of creation_date
 | min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1349,8 +1349,8 @@ Returns the user identified by userId top 30 tags by combined question and answe
 | sortBy       | String | Parameter to sort by. Possible values: activity(default), creation, votes, relevance.
 | pageNumber   | Number | Number of the page
 | pageSize     | Number | Size of the page
-| fromDate     | Number | Defines the range of creation_date (unixtime format)
-| toDate       | Number | Defines the range of creation_date (unixtime format)
+| fromDate     | Number | Defines the range of creation_date
+| toDate       | Number | Defines the range of creation_date
 | min          | Number | Specify the range of a field must fall in (that field being specified by sortBy)
 | max          | Number | Specify the range of a field must fall in (that field being specified by sortBy)
 | accepted     | Boolean| true to return only questions with accepted answers, false to return only those without.
