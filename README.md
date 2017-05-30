@@ -1,8 +1,8 @@
-[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/StackOverflow/functions?utm_source=RapidAPIGitHub_StackOverflowFunctions&utm_medium=button&utm_content=RapidAPI_GitHub) 
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/StackOverflow/functions?utm_source=RapidAPIGitHub_StackOverflowFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 
 # StackOverflow Package
 StackOverflow
-* Domain: stackoverflow.com
+* Domain: [StackOverflow](http://stackOverflow.com)
 * Credentials: clientId, clientSecret, clientKey
 
 ## How to get credentials: 
@@ -10,6 +10,16 @@ StackOverflow
 1. Log in or create a new account
 2. [Register an app](http://stackapps.com/apps/oauth/register)
 3. After creation your app you will see Client ID, Client Secret and Client Key
+
+## Custom datatypes: 
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]``` 
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+ 
 
 ## StackOverflow.getAccessToken
 Creates a new token
@@ -42,12 +52,12 @@ Returns the user associated with the passed accessToken
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -58,13 +68,13 @@ Returns information about the user with provided Ids
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | Array      | Ids of the user as array.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
+| userIds     | List       | Ids of the user array.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -76,12 +86,12 @@ Returns all users on a site.
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
 | inName      | String     | The inName parameter lets consumers filter the results down to just those users with a certain substring in their display name.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -92,12 +102,12 @@ Gets those users on a site who can exercise moderation powers. Note, employees o
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -108,12 +118,12 @@ Returns those users on a site who both have moderator powers, and were actually 
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: reputation(default), creation, name, modified.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -126,8 +136,8 @@ Get a subset of the actions of that have been taken by the users identified by a
 | accessToken| String     | Access token obtained from StackOverflow.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date
-| toDate     | Number     | Defines the range of creation_date
+| fromDate   | DatePicker | Defines the range of creation_date
+| toDate     | DatePicker | Defines the range of creation_date
 
 ## StackOverflow.getUserTimeline
 Get a subset of the actions of that have been taken by the users identified by id.
@@ -139,8 +149,8 @@ Get a subset of the actions of that have been taken by the users identified by i
 | userId     | Number     | Id of the user
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date
-| toDate     | Number     | Defines the range of creation_date
+| fromDate   | DatePicker | Defines the range of creation_date
+| toDate     | DatePicker | Defines the range of creation_date
 
 ## StackOverflow.getAllAnswers
 Returns all the undeleted answers in the system.
@@ -149,29 +159,29 @@ Returns all the undeleted answers in the system.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
-## StackOverflow.getAnswersBgetAnswersByIds
+## StackOverflow.getAnswersByIds
 Returns answers in the system with provided Ids.
 
 | Field       | Type       | Description
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| answerIds   | Array      | List of ids as array.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
+| answerIds   | List       | List of ids array.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -266,13 +276,13 @@ Gets the answers to a set of questions identified in ids.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| questionIds | Array      | Question ids as array
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
+| questionIds | String     | Question ids array
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -293,12 +303,12 @@ Returns the answers owned by the user associated with the given accessToken.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -309,13 +319,13 @@ Returns the answers the users in userIds have posted.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | Array      | Ids of the users as array.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
+| userIds     | String     | Ids of the users array.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -327,12 +337,12 @@ Returns the top 30 answers the user associated with the given accessToken has po
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
 | tagList     | String     | List of tags.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -343,14 +353,14 @@ Returns the top 30 answers the user associated with the given userId has posted 
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| tagList     | Array      | Array of tags.
+| tagList     | List       | List of tags.
 | userId      | Number     | Id of the user
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -362,12 +372,12 @@ Returns all the badges in the system.
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
 | inName      | String     | The inName parameter lets consumers filter the results down to just those badges with a certain substring in their display name.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: rank(default), name, type.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: rank(default), name, type.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -378,13 +388,13 @@ Gets the badges identified in badgeIds.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| badgeIds    | Array      | Badge Ids as array
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: rank(default), name, type.
+| badgeIds    | List       | Badge Ids array
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: rank(default), name, type.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -397,8 +407,8 @@ Returns recently awarded badges in the system.
 | accessToken| String     | Access token obtained from StackOverflow.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date
-| toDate     | Number     | Defines the range of creation_date
+| fromDate   | DatePicker | Defines the range of creation_date
+| toDate     | DatePicker | Defines the range of creation_date
 
 ## StackOverflow.getAllNamedBadges
 Gets all explicitly named badges in the system.
@@ -408,12 +418,12 @@ Gets all explicitly named badges in the system.
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
 | inName      | String     | The inName parameter lets consumers filter the results down to just those badges with a certain substring in their display name.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: rank(default), name.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: rank(default), name.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -425,12 +435,12 @@ Gets all explicitly named badges in the system.
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
 | inName      | String     | The inName parameter lets consumers filter the results down to just those badges with a certain substring in their tag name.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: rank(default), name.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: rank(default), name.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -441,12 +451,12 @@ Returns the badges earned by the user associated with the given accessToken
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: rank(default), name, type
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: rank(default), name, type
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -457,13 +467,13 @@ Returns the badges earned by the users associated with the given userIds
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | Array      | Ids of the users as array.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: rank(default), name, type
+| userIds     | List       | Ids of the users array.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: rank(default), name, type
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -483,13 +493,13 @@ Gets the comments on a set of answers.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| answerIds   | Array      | Answer Ids as array
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
+| answerIds   | String     | Answer Ids array
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -500,12 +510,12 @@ Gets all the comments on the site.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -516,13 +526,13 @@ Gets all the comments with commentIds.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| commentIds  | Array      | Ids of the comments.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
+| commentIds  | List       | Ids of the comments.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -608,13 +618,13 @@ Gets the comments on a set of posts.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| postIds     | Array      | Post Ids as array
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
+| postIds     | List       | Post Ids array
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -625,12 +635,12 @@ Returns the comments owned by the user associated with the given accessToken.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -641,13 +651,13 @@ Gets the comments of users in userIds
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | Array      | User Ids as array
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
+| userIds     | List       | User Ids array
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -659,12 +669,12 @@ Returns the comments owned by the user associated with the given accessToken tha
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
 | userId      | Number     | User Id
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -675,14 +685,14 @@ Get the comments that the users in commentatorIds have posted in reply to the si
 |---------------|------------|----------
 | clientKey     | credentials| Client key obtained from StackOverflow
 | accessToken   | String     | Access token obtained from StackOverflow.
-| commentatorIds| Array      | Commentators' Ids
+| commentatorIds| List       | Commentators' Ids
 | userId        | Number     | User Id
-| sortingOrder  | String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy        | String     | Parameter to sort by. Possible values: creation(default), votes.
+| sortingOrder  | Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy        | Select     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber    | Number     | Number of the page
 | pageSize      | Number     | Size of the page
-| fromDate      | Number     | Defines the range of creation_date
-| toDate        | Number     | Defines the range of creation_date
+| fromDate      | DatePicker | Defines the range of creation_date
+| toDate        | DatePicker | Defines the range of creation_date
 | min           | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max           | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -693,12 +703,12 @@ Returns the comments mentioning the user associated with the given accessToken.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -709,13 +719,13 @@ Returns the comments mentioning the users in userIds.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | Array      | Ids of users as array
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), votes.
+| userIds     | List       | Ids of users array
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -728,7 +738,7 @@ Returns a stream of events that have occurred on the site.
 | accessToken| String     | Access token obtained from StackOverflow.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date
+| fromDate   | DatePicker | Defines the range of creation_date
 
 ## StackOverflow.getStackoverflowStatistics
 Returns a collection of statistics about the site.
@@ -795,7 +805,7 @@ Returns all of a user's associated accounts, given their userIds
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | Array      | List of user ids as array.
+| userIds     | List       | List of user ids array.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
 | accountTypes| String     | You can filter the accountTypes returned by this method with the types parameter. Specify, semicolon delimited, main_site or meta_site to filter by site.
@@ -810,8 +820,8 @@ Returns a summary of a user's activity across the Stack Exchange network, given 
 | userId       | Number     | Id of the user
 | pageNumber   | Number     | Number of the page
 | pageSize     | Number     | Size of the page
-| fromDate     | Number     | Defines the range of creation_date
-| toDate       | Number     | Defines the range of creation_date
+| fromDate     | DatePicker | Defines the range of creation_date
+| toDate       | DatePicker | Defines the range of creation_date
 | activityTypes| String     | Type of network activity
 
 ## StackOverflow.getMyActivity
@@ -823,8 +833,8 @@ Returns a summary of a user's activity across the Stack Exchange network associa
 | accessToken  | String     | Access token obtained from StackOverflow.
 | pageNumber   | Number     | Number of the page
 | pageSize     | Number     | Size of the page
-| fromDate     | Number     | Defines the range of creation_date
-| toDate       | Number     | Defines the range of creation_date
+| fromDate     | DatePicker | Defines the range of creation_date
+| toDate       | DatePicker | Defines the range of creation_date
 | activityTypes| String     | Type of network activity
 
 ## StackOverflow.getMyNotifications
@@ -876,12 +886,12 @@ Fetches all posts (questions and answers) on the site.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -892,13 +902,13 @@ Fetches posts (questions and answers) on the site with provided Ids.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| postIds     | Array      | Ids of posts.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
+| postIds     | List       | Ids of posts.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -909,12 +919,12 @@ Fetches all posts (questions and answers) of the user with provided accessToken.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -925,13 +935,13 @@ Fetches posts (questions and answers) on the site made by users with provided Id
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | Array      | Ids of users.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: activity(default), creation, votes.
+| userIds     | List       | Ids of users.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -979,11 +989,11 @@ Returns the reputation on a site for the user identified by provided userIds.
 |------------|------------|----------
 | clientKey  | credentials| Client key obtained from StackOverflow
 | accessToken| String     | Access token obtained from StackOverflow.
-| userIds    | Array      | Ids of the users.
+| userIds    | String     | Ids of the users.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date
-| toDate     | Number     | Defines the range of creation_date
+| fromDate   | DatePicker | Defines the range of creation_date
+| toDate     | DatePicker | Defines the range of creation_date
 
 ## StackOverflow.getMyReputationHistory
 Returns the reputation history on a site for the user identified by provided accessToken.
@@ -1014,11 +1024,11 @@ Returns edit revisions for the posts identified in postsIds
 |------------|------------|----------
 | clientKey  | credentials| Client key obtained from StackOverflow
 | accessToken| String     | Access token obtained from StackOverflow.
-| postIds    | Array      | Ids of the posts.
+| postIds    | List       | Ids of the posts.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date
-| toDate     | Number     | Defines the range of creation_date
+| fromDate   | DatePicker | Defines the range of creation_date
+| toDate     | DatePicker | Defines the range of creation_date
 
 ## StackOverflow.getRevisionsByIds
 Returns edit revisions identified by revisionsIds
@@ -1027,11 +1037,11 @@ Returns edit revisions identified by revisionsIds
 |------------|------------|----------
 | clientKey  | credentials| Client key obtained from StackOverflow
 | accessToken| String     | Access token obtained from StackOverflow.
-| revisionIds| Array      | Ids of the revisions.
+| revisionIds| List       | Ids of the revisions.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
-| fromDate   | Number     | Defines the range of creation_date
-| toDate     | Number     | Defines the range of creation_date
+| fromDate   | DatePicker | Defines the range of creation_date
+| toDate     | DatePicker | Defines the range of creation_date
 
 ## StackOverflow.getPostsSuggestedEdits
 Returns suggested edits on the posts identified in ids.
@@ -1040,13 +1050,13 @@ Returns suggested edits on the posts identified in ids.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| postIds     | Array      | Post Ids as array
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
+| postIds     | List       | Post Ids array
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1057,12 +1067,12 @@ Returns all the suggested edits in the systems.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1073,13 +1083,13 @@ Returns suggested edits identified in editIds
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| editIds     | Array      | Edit Ids as array
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
+| editIds     | List       | Edit Ids array
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1090,12 +1100,12 @@ Returns the suggested edits the user identified by accessToken has submitted.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1106,82 +1116,82 @@ Returns the suggested edits a users in userIds have submitted.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | Array      | User Ids as array
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: creation(default), approval, rejection.
+| userIds     | List       | User Ids array
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: creation(default), approval, rejection.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
 ## StackOverflow.getTags
 Returns the tags found on a site.
 
-| Field       | Type  | Description
-|-------------|-------|----------
-| inName      | String| Filters down to tags that contain a certain substring
-| sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
-| pageNumber  | Number| Number of the page
-| pageSize    | Number| Size of the page
-| fromDate    | Number| Defines the range of creation_date
-| toDate      | Number| Defines the range of creation_date
-| min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
-| max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+| Field       | Type      | Description
+|-------------|-----------|----------
+| inName      | String    | Filters down to tags that contain a certain substring
+| sortingOrder| Select    | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select    | Parameter to sort by. Possible values: popular(default), activity, name.
+| pageNumber  | Number    | Number of the page
+| pageSize    | Number    | Size of the page
+| fromDate    | DatePicker| Defines the range of creation_date
+| toDate      | DatePicker| Defines the range of creation_date
+| min         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
 
 ## StackOverflow.getModeratorTags
 Returns the tags found on a site that only moderators can use.
 
-| Field       | Type  | Description
-|-------------|-------|----------
-| inName      | String| Filters down to tags that contain a certain substring
-| sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
-| pageNumber  | Number| Number of the page
-| pageSize    | Number| Size of the page
-| fromDate    | Number| Defines the range of creation_date
-| toDate      | Number| Defines the range of creation_date
-| min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
-| max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+| Field       | Type      | Description
+|-------------|-----------|----------
+| inName      | String    | Filters down to tags that contain a certain substring
+| sortingOrder| Select    | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select    | Parameter to sort by. Possible values: popular(default), activity, name.
+| pageNumber  | Number    | Number of the page
+| pageSize    | Number    | Size of the page
+| fromDate    | DatePicker| Defines the range of creation_date
+| toDate      | DatePicker| Defines the range of creation_date
+| min         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
 
 ## StackOverflow.getRequiredTags
 Returns the tags found on a site that fulfill required tag constraints on questions.
 
-| Field       | Type  | Description
-|-------------|-------|----------
-| inName      | String| Filters down to tags that contain a certain substring
-| sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
-| pageNumber  | Number| Number of the page
-| pageSize    | Number| Size of the page
-| fromDate    | Number| Defines the range of creation_date
-| toDate      | Number| Defines the range of creation_date
-| min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
-| max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+| Field       | Type      | Description
+|-------------|-----------|----------
+| inName      | String    | Filters down to tags that contain a certain substring
+| sortingOrder| Select    | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select    | Parameter to sort by. Possible values: popular(default), activity, name.
+| pageNumber  | Number    | Number of the page
+| pageSize    | Number    | Size of the page
+| fromDate    | DatePicker| Defines the range of creation_date
+| toDate      | DatePicker| Defines the range of creation_date
+| min         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
 
 ## StackOverflow.getTagsInfo
 Returns tag objects representing the tags in tagNames found on the site.
 
-| Field       | Type  | Description
-|-------------|-------|----------
-| tagNames    | Array | List of tag names as array
-| sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String| Parameter to sort by. Possible values: popular(default), activity, name.
-| pageNumber  | Number| Number of the page
-| pageSize    | Number| Size of the page
-| fromDate    | Number| Defines the range of creation_date
-| toDate      | Number| Defines the range of creation_date
-| min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
-| max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+| Field       | Type      | Description
+|-------------|-----------|----------
+| tagNames    | List      | List of tag names array
+| sortingOrder| Select    | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select    | Parameter to sort by. Possible values: popular(default), activity, name.
+| pageNumber  | Number    | Number of the page
+| pageSize    | Number    | Size of the page
+| fromDate    | DatePicker| Defines the range of creation_date
+| toDate      | DatePicker| Defines the range of creation_date
+| min         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
 
 ## StackOverflow.getRelatedTags
 Returns the tags that are most related to those in tagNames.
 
 | Field     | Type  | Description
 |-----------|-------|----------
-| tagNames  | Array | List of tag names as array
+| tagNames  | List  | List of tag names array
 | pageNumber| Number| Number of the page
 | pageSize  | Number| Size of the page
 
@@ -1192,12 +1202,12 @@ Returns the tags the user identified by the accessToken passed is active in.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: popular(default), activity, name.
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: popular(default), activity, name.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1208,13 +1218,13 @@ Returns the tags the users identified in userIds have been active in.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | Array      | Ids of users
-| sortingOrder| String     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String     | Parameter to sort by. Possible values: popular(default), activity, name.
+| userIds     | List       | Ids of users
+| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select     | Parameter to sort by. Possible values: popular(default), activity, name.
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
-| fromDate    | Number     | Defines the range of creation_date
-| toDate      | Number     | Defines the range of creation_date
+| fromDate    | DatePicker | Defines the range of creation_date
+| toDate      | DatePicker | Defines the range of creation_date
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
@@ -1224,7 +1234,7 @@ Returns the top 30 answerers active in a single tag, of either all-time or the l
 | Field     | Type  | Description
 |-----------|-------|----------
 | tagName   | String| Name of the tag
-| period    | String| Period of the selection. Possible valued: all_time(default), month
+| period    | Select| Period of the selection. Possible valued: all_time(default), month
 | pageNumber| Number| Number of the page
 | pageSize  | Number| Size of the page
 
@@ -1234,45 +1244,45 @@ Returns the top 30 askers active in a single tag, of either all-time or the last
 | Field     | Type  | Description
 |-----------|-------|----------
 | tagName   | String| Name of the tag
-| period    | String| Period of the selection. Possible valued: all_time(default), month
+| period    | Select| Period of the selection. Possible valued: all_time(default), month
 | pageNumber| Number| Number of the page
 | pageSize  | Number| Size of the page
 
 ## StackOverflow.getAllTagsSynonyms
 Returns all tag synonyms found a site.
 
-| Field       | Type  | Description
-|-------------|-------|----------
-| sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String| Parameter to sort by. Possible values: creation(default), activity, applied.
-| pageNumber  | Number| Number of the page
-| pageSize    | Number| Size of the page
-| fromDate    | Number| Defines the range of creation_date
-| toDate      | Number| Defines the range of creation_date
-| min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
-| max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+| Field       | Type      | Description
+|-------------|-----------|----------
+| sortingOrder| Select    | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select    | Parameter to sort by. Possible values: creation(default), activity, applied.
+| pageNumber  | Number    | Number of the page
+| pageSize    | Number    | Size of the page
+| fromDate    | DatePicker| Defines the range of creation_date
+| toDate      | DatePicker| Defines the range of creation_date
+| min         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
 
 ## StackOverflow.getSynonymsForTags
 Gets all the synonyms that point to the tags identified in tagNames
 
-| Field       | Type  | Description
-|-------------|-------|----------
-| tagNames    | Array | Array of tags
-| sortingOrder| String| Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | String| Parameter to sort by. Possible values: creation(default), activity, applied.
-| pageNumber  | Number| Number of the page
-| pageSize    | Number| Size of the page
-| fromDate    | Number| Defines the range of creation_date
-| toDate      | Number| Defines the range of creation_date
-| min         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
-| max         | Number| Specify the range of a field must fall in (that field being specified by sortBy)
+| Field       | Type      | Description
+|-------------|-----------|----------
+| tagNames    | List      | list of tags
+| sortingOrder| Select    | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy      | Select    | Parameter to sort by. Possible values: creation(default), activity, applied.
+| pageNumber  | Number    | Number of the page
+| pageSize    | Number    | Size of the page
+| fromDate    | DatePicker| Defines the range of creation_date
+| toDate      | DatePicker| Defines the range of creation_date
+| min         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
+| max         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
 
 ## StackOverflow.getWikisForTags
 Gets all the synonyms that point to the tags identified in tagNames
 
 | Field     | Type  | Description
 |-----------|-------|----------
-| tagNames  | Array | Array of tags
+| tagNames  | List  | list of tags
 | pageNumber| Number| Number of the page
 | pageSize  | Number| Size of the page
 
@@ -1342,28 +1352,28 @@ Returns the user identified by userId top 30 tags by combined question and answe
 ## StackOverflow.search
 Returns the user identified by userId top 30 tags by combined question and answer score.
 
-| Field        | Type   | Description
-|--------------|--------|----------
-| searchString | String | A free form text parameter, will match all question properties based on an undocumented algorithm.
-| sortingOrder | String | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy       | String | Parameter to sort by. Possible values: activity(default), creation, votes, relevance.
-| pageNumber   | Number | Number of the page
-| pageSize     | Number | Size of the page
-| fromDate     | Number | Defines the range of creation_date
-| toDate       | Number | Defines the range of creation_date
-| min          | Number | Specify the range of a field must fall in (that field being specified by sortBy)
-| max          | Number | Specify the range of a field must fall in (that field being specified by sortBy)
-| accepted     | Boolean| true to return only questions with accepted answers, false to return only those without.
-| minAnswers   | Number | The minimum number of answers returned questions must have
-| questionBody | String | Text which must appear in returned questions' bodies.
-| closed       | Boolean| true to return only closed questions, false to return only open ones
-| migrated     | Boolean| true to return only questions migrated away from a site, false to return only those not.
-| notice       | Boolean| true to return only questions with post notices, false to return only those without.
-| exceptTags   | String | A semicolon delimited list of tags, none of which will be present on returned questions. At least one additional parameter must be set if exceptTags is set, for performance reasons.
-| withTags     | String | A semicolon delimited list of tags, of which at least one will be present on all returned questions.
-| questionTitle| String | Text which must appear in returned questions' titles.
-| questionerId | Number | The id of the user who must own the questions returned.
-| withUrl      | String | A url which must be contained in a post, may include a wildcard.
-| minViews     | Number | The minimum number of views returned questions must have.
-| wiki         | Boolean| True to return only community wiki questions, false to return only non-community wiki ones.
+| Field        | Type      | Description
+|--------------|-----------|----------
+| searchString | String    | A free form text parameter, will match all question properties based on an undocumented algorithm.
+| sortingOrder | Select    | Ascending or descending sorting order. Possible values: asc and desc(default).
+| sortBy       | Select    | Parameter to sort by. Possible values: activity(default), creation, votes, relevance.
+| pageNumber   | Number    | Number of the page
+| pageSize     | Number    | Size of the page
+| fromDate     | DatePicker| Defines the range of creation_date
+| toDate       | DatePicker| Defines the range of creation_date
+| min          | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
+| max          | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
+| accepted     | Boolean   | true to return only questions with accepted answers, false to return only those without.
+| minAnswers   | Number    | The minimum number of answers returned questions must have
+| questionBody | String    | Text which must appear in returned questions' bodies.
+| closed       | Boolean   | true to return only closed questions, false to return only open ones
+| migrated     | Boolean   | true to return only questions migrated away from a site, false to return only those not.
+| notice       | Boolean   | true to return only questions with post notices, false to return only those without.
+| exceptTags   | List      | A semicolon delimited list of tags, none of which will be present on returned questions. At least one additional parameter must be set if exceptTags is set, for performance reasons.
+| withTags     | List      | A semicolon delimited list of tags, of which at least one will be present on all returned questions.
+| questionTitle| String    | Text which must appear in returned questions' titles.
+| questionerId | Number    | The id of the user who must own the questions returned.
+| withUrl      | String    | A url which must be contained in a post, may include a wildcard.
+| minViews     | Number    | The minimum number of views returned questions must have.
+| wiki         | Boolean   | True to return only community wiki questions, false to return only non-community wiki ones.
 
