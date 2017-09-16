@@ -18,7 +18,7 @@
     "Go to StackOverflow website(http://stackoverflow.com/)",
     "Log in or create a new account",
     "Register an app(http://stackapps.com/apps/oauth/register)",
-    "After creation your app you will see Client ID, Client Secret and Client Key
+    "After creation your app you will see Client ID, Client Secret and Client Key"
   ],
   "blocks": [
     {
