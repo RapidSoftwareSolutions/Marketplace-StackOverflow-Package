@@ -25,7 +25,10 @@ $app->post('/api/StackOverflow/getMyUnreadInboxItems', function ($request, $resp
 
     if (isset($post_data['args']['pageSize']) && (strlen($post_data['args']['pageSize'])) > 0) {
         $body['pagesize'] = $post_data['args']['pageSize'];
-    };
+		};
+		if (isset($post_data['args']['since']) && (strlen($post_data['args']['since'])) > 0) {
+			$body['since'] = $post_data['args']['since'];
+		};
     $body['site'] = 'stackoverflow';
     //requesting remote API
     $client = new GuzzleHttp\Client();

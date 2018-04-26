@@ -11,7 +11,7 @@ $app->post('/api/StackOverflow/getAnswersByUserIds', function ($request, $respon
         $post_data = $validateRes;
     }
 
-    //forming request to vendor API
+		//forming request to vendor API
     $userIds = is_array($post_data['args']['userIds']) ? implode(';', $post_data['args']['userIds']) : $post_data['args']['userIds'];
     $query_str = $settings['api_url'] . 'users/' . $userIds . '/answers';
     $body = array();

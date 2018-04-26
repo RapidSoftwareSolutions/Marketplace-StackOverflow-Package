@@ -17,7 +17,8 @@ $app->post('/api/StackOverflow/createAnswerOnQuestion', function ($request, $res
     $body['site'] = 'stackoverflow';
     $body['access_token'] = $post_data['args']['accessToken'];
     $body['key'] = $post_data['args']['clientKey'];
-    $body['body'] = $post_data['args']['answerBody'];
+		$body['body'] = $post_data['args']['answerBody'];
+		$body['preview'] = $post_data['args']['preview'];
 
 
     //requesting remote API

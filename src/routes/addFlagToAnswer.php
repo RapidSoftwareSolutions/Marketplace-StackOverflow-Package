@@ -17,7 +17,8 @@ $app->post('/api/StackOverflow/addFlagToAnswer', function ($request, $response, 
     $body['site'] = 'stackoverflow';
     $body['access_token'] = $post_data['args']['accessToken'];
     $body['key'] = $post_data['args']['clientKey'];
-    $body['option_id'] = $post_data['args']['flagId'];
+		$body['option_id'] = $post_data['args']['flagId'];
+		$body['preview'] = $post_data['args']['preview'];
 
 
 

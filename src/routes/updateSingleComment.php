@@ -17,7 +17,8 @@ $app->post('/api/StackOverflow/updateSingleComment', function ($request, $respon
     $body['site'] = 'stackoverflow';
     $body['access_token'] = $post_data['args']['accessToken'];
     $body['key'] = $post_data['args']['clientKey'];
-    $body['body'] = $post_data['args']['commentBody'];
+		$body['body'] = $post_data['args']['commentBody'];
+		$body['preview'] = $post_data['args']['preview'];
 
 
     //requesting remote API

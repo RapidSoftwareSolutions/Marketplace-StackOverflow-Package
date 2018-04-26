@@ -45,7 +45,15 @@ $app->post('/api/StackOverflow/getAllAnswers', function ($request, $response, $a
             $dateTime = new DateTime($post_data['args']['fromDate']);
             $body['fromdate'] = $dateTime->format('U');
         }
-    };
+		};
+		
+		if (isset($post_data['args']['min']) && (strlen($post_data['args']['min'])) > 0) {
+				$body['min'] = $post_data['args']['min'];
+		};
+
+		if (isset($post_data['args']['max']) && (strlen($post_data['args']['max'])) > 0) {
+				$body['max'] = $post_data['args']['max'];
+		};
 
     if (isset($post_data['args']['toDate']) && (strlen($post_data['args']['toDate'])) > 0) {
         if (is_numeric($post_data['args']['toDate'])) {

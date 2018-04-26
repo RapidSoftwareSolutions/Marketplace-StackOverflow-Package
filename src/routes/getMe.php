@@ -18,62 +18,6 @@ $app->post('/api/StackOverflow/getMe', function ($request, $response, $args) {
     $body['access_token'] = $post_data['args']['accessToken'];
     $body['key'] = $post_data['args']['clientKey'];
 
-    if (isset($post_data['args']['sortingOrder']) && (strlen($post_data['args']['sortingOrder'])) > 0) {
-        $body['order'] = $post_data['args']['sortingOrder'];
-    } else {
-        $body['order'] = 'desc';
-    }
-
-    if (isset($post_data['args']['sortBy']) && (strlen($post_data['args']['sortBy'])) > 0) {
-        $body['sort'] = $post_data['args']['sortBy'];
-    } else {
-        $body['sort'] = 'reputation';
-    };
-
-    if (isset($post_data['args']['pageNumber']) && (strlen($post_data['args']['pageNumber'])) > 0) {
-        $body['page'] = $post_data['args']['pageNumber'];
-    };
-
-    if (isset($post_data['args']['pageSize']) && (strlen($post_data['args']['pageSize'])) > 0) {
-        $body['pagesize'] = $post_data['args']['pageSize'];
-    };
-
-    if (isset($post_data['args']['fromDate']) && (strlen($post_data['args']['fromDate'])) > 0) {
-        if (is_numeric($post_data['args']['fromDate'])) {
-            if (is_numeric($post_data['args']['fromDate'])) {
-                $body['fromdate'] = $post_data['args']['fromDate'];
-            } else {
-                $dateTime = new DateTime($post_data['args']['fromDate']);
-                $body['fromdate'] = $dateTime->format('U');
-            }
-        } else {
-            $dateTime = new DateTime($post_data['args']['fromDate']);
-            $body['fromdate'] = $dateTime->format('U');
-        }
-    };
-
-    if (isset($post_data['args']['toDate']) && (strlen($post_data['args']['toDate'])) > 0) {
-        if (is_numeric($post_data['args']['toDate'])) {
-            if (is_numeric($post_data['args']['toDate'])) {
-                $body['todate'] = $post_data['args']['toDate'];
-            } else {
-                $dateTime = new DateTime($post_data['args']['toDate']);
-                $body['todate'] = $dateTime->format('U');
-            }
-        } else {
-            $dateTime = new DateTime($post_data['args']['toDate']);
-            $body['todate'] = $dateTime->format('U');
-        }
-    };
-
-    if (isset($post_data['args']['min']) && (strlen($post_data['args']['min'])) > 0) {
-        $body['min'] = $post_data['args']['min'];
-    };
-
-    if (isset($post_data['args']['max']) && (strlen($post_data['args']['max'])) > 0) {
-        $body['max'] = $post_data['args']['max'];
-    };
-
     //requesting remote API
     $client = new GuzzleHttp\Client();
 

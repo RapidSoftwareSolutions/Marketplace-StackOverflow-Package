@@ -16,7 +16,8 @@ $app->post('/api/StackOverflow/undoUpvoteOnComment', function ($request, $respon
     $body = array();
     $body['site'] = 'stackoverflow';
     $body['access_token'] = $post_data['args']['accessToken'];
-    $body['key'] = $post_data['args']['clientKey'];
+		$body['key'] = $post_data['args']['clientKey'];
+		$body['preview'] = $post_data['args']['preview'];
 
 
     //requesting remote API

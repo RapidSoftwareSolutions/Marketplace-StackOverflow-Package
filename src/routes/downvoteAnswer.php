@@ -17,6 +17,7 @@ $app->post('/api/StackOverflow/downvoteAnswer', function ($request, $response, $
     $body['site'] = 'stackoverflow';
     $body['access_token'] = $post_data['args']['accessToken'];
     $body['key'] = $post_data['args']['clientKey'];
+		$body['preview'] = $post_data['args']['preview'];
 
 
     //requesting remote API

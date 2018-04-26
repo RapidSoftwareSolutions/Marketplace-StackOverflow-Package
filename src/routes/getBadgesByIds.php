@@ -13,7 +13,7 @@ $app->post('/api/StackOverflow/getBadgesByIds', function ($request, $response, $
 
     //forming request to vendor API
     $badgeIds = is_array($post_data['args']['badgeIds']) ? implode(';', $post_data['args']['badgeIds']) : $post_data['args']['badgeIds'];
-    $query_str = $settings['api_url'] . 'badges/' . $post_data['args']['$badgeIds'];
+    $query_str = $settings['api_url'] . 'badges/' .  $badgeIds;
     $body = array();
 
     $body['access_token'] = $post_data['args']['accessToken'];

@@ -18,7 +18,8 @@ $app->post('/api/StackOverflow/updateSingleAnswer', function ($request, $respons
     $body['access_token'] = $post_data['args']['accessToken'];
     $body['key'] = $post_data['args']['clientKey'];
     $body['body'] = $post_data['args']['answerBody'];
-    $body['comment'] = $post_data['args']['answerComment'];
+		$body['comment'] = $post_data['args']['answerComment'];
+		$body['preview'] = $post_data['args']['preview'];
 
 
     //requesting remote API

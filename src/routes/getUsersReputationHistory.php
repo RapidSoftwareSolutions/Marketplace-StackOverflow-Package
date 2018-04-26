@@ -1,10 +1,10 @@
 <?php
-$app->post('/api/StackOverflow/getUserTimeline', function ($request, $response, $args) {
+$app->post('/api/StackOverflow/getUsersReputationHistory', function ($request, $response, $args) {
     $settings = $this->settings;
 
     //checking properly formed json
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['accessToken', 'clientKey', 'userIds']);
+    $validateRes = $checkRequest->validate($request, ['accessToken', 'clientKey', 'userId']);
     if (!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback'] == 'error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {
@@ -12,13 +12,13 @@ $app->post('/api/StackOverflow/getUserTimeline', function ($request, $response, 
     }
 
 		//forming request to vendor API
-		$userIds = is_array($post_data['args']['userIds']) ? implode(';', $post_data['args']['userIds']) : $post_data['args']['userIds'];
-    $query_str = $settings['api_url'] . 'users/' . $userIds . '/timeline';
+    $userIds = is_array($post_data['args']['userId']) ? implode(';', $post_data['args']['userId']) : $post_data['args']['userId'];
+    $query_str = $settings['api_url'] . 'users/' . $userIds . '/reputation-history';
     $body = array();
-    $body['site'] = 'stackoverflow';
-    $body['access_token'] = $post_data['args']['accessToken'];
-    $body['key'] = $post_data['args']['clientKey'];
 
+    $body['access_token'] = $post_data['args']['accessToken'];
+		$body['key'] = $post_data['args']['clientKey'];
+		
     if (isset($post_data['args']['pageNumber']) && (strlen($post_data['args']['pageNumber'])) > 0) {
         $body['page'] = $post_data['args']['pageNumber'];
     };
@@ -27,34 +27,8 @@ $app->post('/api/StackOverflow/getUserTimeline', function ($request, $response, 
         $body['pagesize'] = $post_data['args']['pageSize'];
     };
 
-    if (isset($post_data['args']['fromDate']) && (strlen($post_data['args']['fromDate'])) > 0) {
-        if (is_numeric($post_data['args']['fromDate'])) {
-            if (is_numeric($post_data['args']['fromDate'])) {
-                $body['fromdate'] = $post_data['args']['fromDate'];
-            } else {
-                $dateTime = new DateTime($post_data['args']['fromDate']);
-                $body['fromdate'] = $dateTime->format('U');
-            }
-        } else {
-            $dateTime = new DateTime($post_data['args']['fromDate']);
-            $body['fromdate'] = $dateTime->format('U');
-        }
-    };
 
-    if (isset($post_data['args']['toDate']) && (strlen($post_data['args']['toDate'])) > 0) {
-        if (is_numeric($post_data['args']['toDate'])) {
-            if (is_numeric($post_data['args']['toDate'])) {
-                $body['todate'] = $post_data['args']['toDate'];
-            } else {
-                $dateTime = new DateTime($post_data['args']['toDate']);
-                $body['todate'] = $dateTime->format('U');
-            }
-        } else {
-            $dateTime = new DateTime($post_data['args']['toDate']);
-            $body['todate'] = $dateTime->format('U');
-        }
-    };
-
+    $body['site'] = 'stackoverflow';
     //requesting remote API
     $client = new GuzzleHttp\Client();
 

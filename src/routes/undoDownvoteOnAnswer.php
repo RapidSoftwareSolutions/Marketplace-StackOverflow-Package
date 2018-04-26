@@ -17,7 +17,7 @@ $app->post('/api/StackOverflow/undoDownvoteOnAnswer', function ($request, $respo
     $body['site'] = 'stackoverflow';
     $body['access_token'] = $post_data['args']['accessToken'];
     $body['key'] = $post_data['args']['clientKey'];
-
+		$body['preview'] = $post_data['args']['preview'];
 
     //requesting remote API
     $client = new GuzzleHttp\Client();

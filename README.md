@@ -1,7 +1,7 @@
 [![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/StackOverflow/functions?utm_source=RapidAPIGitHub_StackOverflowFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 
 # StackOverflow Package
-StackOverflow
+StackOverflow API Package
 * Domain: [StackOverflow](http://stackOverflow.com)
 * Credentials: clientId, clientSecret, clientKey
 
@@ -428,7 +428,7 @@ Gets all explicitly named badges in the system.
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
 ## StackOverflow.getTagsAwardedBadges
-Gets all explicitly named badges in the system.
+Gets all explicitly tags badges in the system.
 
 | Field       | Type       | Description
 |-------------|------------|----------
@@ -1278,7 +1278,7 @@ Gets all the synonyms that point to the tags identified in tagNames
 | max         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
 
 ## StackOverflow.getWikisForTags
-Gets all the synonyms that point to the tags identified in tagNames
+Gets all the wikis that go with the given set of tags in tagNames
 
 | Field     | Type  | Description
 |-----------|-------|----------
@@ -1349,8 +1349,19 @@ Returns the user identified by userId top 30 tags by combined question and answe
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
 
+## StackOverflow.getUsersReputationHistory
+Returns users' public reputation history.
+
+| Field      | Type       | Description
+|------------|------------|----------
+| clientKey  | credentials| Client key obtained from StackOverflow
+| accessToken| String     | Access token obtained from StackOverflow.
+| userId     | String     | id of the user
+| pageNumber | Number     | Number of the page
+| pageSize   | Number     | Size of the page
+
 ## StackOverflow.search
-Returns the user identified by userId top 30 tags by combined question and answer score.
+Returns returned search_excerpts have a snippet of the relevant results. Within the results, any text surrounded by <span class="highlight"> is of particular interest.
 
 | Field        | Type      | Description
 |--------------|-----------|----------
