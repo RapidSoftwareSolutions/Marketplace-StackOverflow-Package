@@ -13,7 +13,7 @@ $app->post('/api/StackOverflow/getBadgesByIds', function ($request, $response, $
 
     //forming request to vendor API
     $badgeIds = is_array($post_data['args']['badgeIds']) ? implode(';', $post_data['args']['badgeIds']) : $post_data['args']['badgeIds'];
-    $query_str = $settings['api_url'] . 'badges/' .  $badgeIds;
+    $query_str = $settings['api_url'] . 'badges/' . $badgeIds;
     $body = array();
 
     $body['access_token'] = $post_data['args']['accessToken'];
@@ -65,7 +65,6 @@ $app->post('/api/StackOverflow/getBadgesByIds', function ($request, $response, $
         $body['max'] = $post_data['args']['max'];
     };
 
-
     $body['site'] = 'stackoverflow';
     //requesting remote API
     $client = new GuzzleHttp\Client();
@@ -73,7 +72,7 @@ $app->post('/api/StackOverflow/getBadgesByIds', function ($request, $response, $
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'query' => $body
+            'query' => $body,
         ]);
 
         $responseBody = $resp->getBody()->getContents();
@@ -109,7 +108,6 @@ $app->post('/api/StackOverflow/getBadgesByIds', function ($request, $response, $
         $result['contextWrites']['to'] = json_decode($responseBody);
 
     }
-
 
     return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 

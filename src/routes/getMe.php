@@ -24,7 +24,7 @@ $app->post('/api/StackOverflow/getMe', function ($request, $response, $args) {
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'query' => $body
+            'query' => $body,
         ]);
 
         $responseBody = $resp->getBody()->getContents();
@@ -60,7 +60,6 @@ $app->post('/api/StackOverflow/getMe', function ($request, $response, $args) {
         $result['contextWrites']['to'] = json_decode($responseBody);
 
     }
-
 
     return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 

@@ -18,17 +18,16 @@ $app->post('/api/StackOverflow/getMyUnreadInboxItems', function ($request, $resp
     $body['access_token'] = $post_data['args']['accessToken'];
     $body['key'] = $post_data['args']['clientKey'];
 
-
     if (isset($post_data['args']['pageNumber']) && (strlen($post_data['args']['pageNumber'])) > 0) {
         $body['page'] = $post_data['args']['pageNumber'];
     };
 
     if (isset($post_data['args']['pageSize']) && (strlen($post_data['args']['pageSize'])) > 0) {
         $body['pagesize'] = $post_data['args']['pageSize'];
-		};
-		if (isset($post_data['args']['since']) && (strlen($post_data['args']['since'])) > 0) {
-			$body['since'] = $post_data['args']['since'];
-		};
+    };
+    if (isset($post_data['args']['since']) && (strlen($post_data['args']['since'])) > 0) {
+        $body['since'] = $post_data['args']['since'];
+    };
     $body['site'] = 'stackoverflow';
     //requesting remote API
     $client = new GuzzleHttp\Client();
@@ -36,7 +35,7 @@ $app->post('/api/StackOverflow/getMyUnreadInboxItems', function ($request, $resp
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'query' => $body
+            'query' => $body,
         ]);
 
         $responseBody = $resp->getBody()->getContents();
@@ -72,7 +71,6 @@ $app->post('/api/StackOverflow/getMyUnreadInboxItems', function ($request, $resp
         $result['contextWrites']['to'] = json_decode($responseBody);
 
     }
-
 
     return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 

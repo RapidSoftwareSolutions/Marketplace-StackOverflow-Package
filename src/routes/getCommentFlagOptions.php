@@ -12,13 +12,12 @@ $app->post('/api/StackOverflow/getCommentFlagOptions', function ($request, $resp
     }
 
     //forming request to vendor API
-    $query_str = $settings['api_url'] . 'comments/'.$post_data['args']['commentId'].'/flags/options';
+    $query_str = $settings['api_url'] . 'comments/' . $post_data['args']['commentId'] . '/flags/options';
     $body = array();
     $body['site'] = 'stackoverflow';
     $body['access_token'] = $post_data['args']['accessToken'];
-		$body['key'] = $post_data['args']['clientKey'];
-		$body['preview'] = $post_data['args']['preview'];
-
+    $body['key'] = $post_data['args']['clientKey'];
+    $body['preview'] = $post_data['args']['preview'];
 
     //requesting remote API
     $client = new GuzzleHttp\Client();
@@ -26,7 +25,7 @@ $app->post('/api/StackOverflow/getCommentFlagOptions', function ($request, $resp
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'query' => $body
+            'query' => $body,
         ]);
 
         $responseBody = $resp->getBody()->getContents();
@@ -63,7 +62,6 @@ $app->post('/api/StackOverflow/getCommentFlagOptions', function ($request, $resp
         $result['contextWrites']['to'] = json_decode($responseBody);
 
     }
-
 
     return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 

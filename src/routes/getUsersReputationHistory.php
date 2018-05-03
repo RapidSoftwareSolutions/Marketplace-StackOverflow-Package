@@ -11,14 +11,14 @@ $app->post('/api/StackOverflow/getUsersReputationHistory', function ($request, $
         $post_data = $validateRes;
     }
 
-		//forming request to vendor API
+    //forming request to vendor API
     $userIds = is_array($post_data['args']['userId']) ? implode(';', $post_data['args']['userId']) : $post_data['args']['userId'];
     $query_str = $settings['api_url'] . 'users/' . $userIds . '/reputation-history';
     $body = array();
 
     $body['access_token'] = $post_data['args']['accessToken'];
-		$body['key'] = $post_data['args']['clientKey'];
-		
+    $body['key'] = $post_data['args']['clientKey'];
+
     if (isset($post_data['args']['pageNumber']) && (strlen($post_data['args']['pageNumber'])) > 0) {
         $body['page'] = $post_data['args']['pageNumber'];
     };
@@ -27,7 +27,6 @@ $app->post('/api/StackOverflow/getUsersReputationHistory', function ($request, $
         $body['pagesize'] = $post_data['args']['pageSize'];
     };
 
-
     $body['site'] = 'stackoverflow';
     //requesting remote API
     $client = new GuzzleHttp\Client();
@@ -35,7 +34,7 @@ $app->post('/api/StackOverflow/getUsersReputationHistory', function ($request, $
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'query' => $body
+            'query' => $body,
         ]);
 
         $responseBody = $resp->getBody()->getContents();
@@ -71,7 +70,6 @@ $app->post('/api/StackOverflow/getUsersReputationHistory', function ($request, $
         $result['contextWrites']['to'] = json_decode($responseBody);
 
     }
-
 
     return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 

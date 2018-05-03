@@ -12,13 +12,12 @@ $app->post('/api/StackOverflow/deleteSingleComment', function ($request, $respon
     }
 
     //forming request to vendor API
-    $query_str = $settings['api_url'] . 'comments/'.$post_data['args']['commentId'].'/delete';
+    $query_str = $settings['api_url'] . 'comments/' . $post_data['args']['commentId'] . '/delete';
     $body = array();
     $body['site'] = 'stackoverflow';
     $body['access_token'] = $post_data['args']['accessToken'];
-		$body['key'] = $post_data['args']['clientKey'];
-		$body['preview'] = $post_data['args']['preview'];
-
+    $body['key'] = $post_data['args']['clientKey'];
+    $body['preview'] = $post_data['args']['preview'];
 
     //requesting remote API
     $client = new GuzzleHttp\Client();
@@ -26,7 +25,7 @@ $app->post('/api/StackOverflow/deleteSingleComment', function ($request, $respon
     try {
 
         $resp = $client->request('POST', $query_str, [
-            'form_params' => $body
+            'form_params' => $body,
         ]);
 
         $responseBody = $resp->getBody()->getContents();
@@ -63,7 +62,6 @@ $app->post('/api/StackOverflow/deleteSingleComment', function ($request, $respon
         $result['contextWrites']['to'] = json_decode($responseBody);
 
     }
-
 
     return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 

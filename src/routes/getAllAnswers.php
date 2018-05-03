@@ -45,15 +45,15 @@ $app->post('/api/StackOverflow/getAllAnswers', function ($request, $response, $a
             $dateTime = new DateTime($post_data['args']['fromDate']);
             $body['fromdate'] = $dateTime->format('U');
         }
-		};
-		
-		if (isset($post_data['args']['min']) && (strlen($post_data['args']['min'])) > 0) {
-				$body['min'] = $post_data['args']['min'];
-		};
+    };
 
-		if (isset($post_data['args']['max']) && (strlen($post_data['args']['max'])) > 0) {
-				$body['max'] = $post_data['args']['max'];
-		};
+    if (isset($post_data['args']['min']) && (strlen($post_data['args']['min'])) > 0) {
+        $body['min'] = $post_data['args']['min'];
+    };
+
+    if (isset($post_data['args']['max']) && (strlen($post_data['args']['max'])) > 0) {
+        $body['max'] = $post_data['args']['max'];
+    };
 
     if (isset($post_data['args']['toDate']) && (strlen($post_data['args']['toDate'])) > 0) {
         if (is_numeric($post_data['args']['toDate'])) {
@@ -70,7 +70,7 @@ $app->post('/api/StackOverflow/getAllAnswers', function ($request, $response, $a
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'query' => $body
+            'query' => $body,
         ]);
 
         $responseBody = $resp->getBody()->getContents();
@@ -106,7 +106,6 @@ $app->post('/api/StackOverflow/getAllAnswers', function ($request, $response, $a
         $result['contextWrites']['to'] = json_decode($responseBody);
 
     }
-
 
     return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 

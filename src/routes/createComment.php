@@ -12,14 +12,13 @@ $app->post('/api/StackOverflow/createComment', function ($request, $response, $a
     }
 
     //forming request to vendor API
-    $query_str = $settings['api_url'] . 'posts/'.$post_data['args']['postId'].'/comments/add';
+    $query_str = $settings['api_url'] . 'posts/' . $post_data['args']['postId'] . '/comments/add';
     $body = array();
     $body['site'] = 'stackoverflow';
     $body['access_token'] = $post_data['args']['accessToken'];
     $body['key'] = $post_data['args']['clientKey'];
-		$body['body'] = $post_data['args']['commentBody'];
-		$body['preview'] = $post_data['args']['preview'];
-
+    $body['body'] = $post_data['args']['commentBody'];
+    $body['preview'] = $post_data['args']['preview'];
 
     //requesting remote API
     $client = new GuzzleHttp\Client();
@@ -27,7 +26,7 @@ $app->post('/api/StackOverflow/createComment', function ($request, $response, $a
     try {
 
         $resp = $client->request('POST', $query_str, [
-            'form_params' => $body
+            'form_params' => $body,
         ]);
 
         $responseBody = $resp->getBody()->getContents();
@@ -64,7 +63,6 @@ $app->post('/api/StackOverflow/createComment', function ($request, $response, $a
         $result['contextWrites']['to'] = json_decode($responseBody);
 
     }
-
 
     return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 

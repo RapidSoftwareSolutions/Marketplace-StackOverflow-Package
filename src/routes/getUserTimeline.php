@@ -11,8 +11,8 @@ $app->post('/api/StackOverflow/getUserTimeline', function ($request, $response, 
         $post_data = $validateRes;
     }
 
-		//forming request to vendor API
-		$userIds = is_array($post_data['args']['userIds']) ? implode(';', $post_data['args']['userIds']) : $post_data['args']['userIds'];
+    //forming request to vendor API
+    $userIds = is_array($post_data['args']['userIds']) ? implode(';', $post_data['args']['userIds']) : $post_data['args']['userIds'];
     $query_str = $settings['api_url'] . 'users/' . $userIds . '/timeline';
     $body = array();
     $body['site'] = 'stackoverflow';
@@ -61,7 +61,7 @@ $app->post('/api/StackOverflow/getUserTimeline', function ($request, $response, 
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'query' => $body
+            'query' => $body,
         ]);
 
         $responseBody = $resp->getBody()->getContents();
@@ -97,7 +97,6 @@ $app->post('/api/StackOverflow/getUserTimeline', function ($request, $response, 
         $result['contextWrites']['to'] = json_decode($responseBody);
 
     }
-
 
     return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 
