@@ -57,13 +57,21 @@ $app->post('/api/StackOverflow/getAnswersByIds', function ($request, $response, 
         }
     };
 
+    if (isset($post_data['args']['min']) && (strlen($post_data['args']['min'])) > 0) {
+        $body['min'] = $post_data['args']['min'];
+    };
+
+    if (isset($post_data['args']['max']) && (strlen($post_data['args']['max'])) > 0) {
+        $body['max'] = $post_data['args']['max'];
+    };
+
     //requesting remote API
     $client = new GuzzleHttp\Client();
 
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'query' => $body
+            'query' => $body,
         ]);
 
         $responseBody = $resp->getBody()->getContents();
@@ -99,7 +107,6 @@ $app->post('/api/StackOverflow/getAnswersByIds', function ($request, $response, 
         $result['contextWrites']['to'] = json_decode($responseBody);
 
     }
-
 
     return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 

@@ -1351,15 +1351,15 @@
           "info": "Access token obtained from StackOverflow.",
           "required": true
         },
-        {
+				{
           "name": "userIds",
-          "type": "String",
-          "info": "Ids of the users array.",
-          "required": true,
-          "structure": {
+          "type": "List",
+          "info": "Id of the user",
+					"required": true,
+					"structure": {
             "name": "userId",
             "type": "Number",
-            "info": "ID of each user"
+            "info": "Id of each anser"
           }
         },
         {
