@@ -193,6 +193,7 @@ Accepts an answer.
 | clientKey  | credentials| Client Key for your application
 | accessToken| String     | Access token obtained from StackOverflow.
 | answerId   | Number     | Id of the answer to accept
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.undoAcceptOnAnswer
 Undo accept on answer.
@@ -202,6 +203,7 @@ Undo accept on answer.
 | clientKey  | credentials| Client Key for your application
 | accessToken| String     | Access token obtained from StackOverflow.
 | answerId   | Number     | Id of the answer to undo accept
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.downvoteAnswer
 Downvote an answer.
@@ -211,6 +213,7 @@ Downvote an answer.
 | clientKey  | credentials| Client Key for your application
 | accessToken| String     | Access token obtained from StackOverflow.
 | answerId   | Number     | Id of the answer to downvote
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.undoDownvoteOnAnswer
 Undo downvote on answer.
@@ -220,6 +223,7 @@ Undo downvote on answer.
 | clientKey  | credentials| Client Key for your application
 | accessToken| String     | Access token obtained from StackOverflow.
 | answerId   | Number     | Id of the answer to undo downvote
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.upvoteAnswer
 Upvote an answer.
@@ -229,6 +233,7 @@ Upvote an answer.
 | clientKey  | credentials| Client Key for your application
 | accessToken| String     | Access token obtained from StackOverflow.
 | answerId   | Number     | Id of the answer to upvote
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.undoUpvoteOnAnswer
 Undo upvote on answer.
@@ -238,6 +243,7 @@ Undo upvote on answer.
 | clientKey  | credentials| Client Key for your application
 | accessToken| String     | Access token obtained from StackOverflow.
 | answerId   | Number     | Id of the answer to undo upvote
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.updateSingleAnswer
 Updates answer
@@ -249,6 +255,7 @@ Updates answer
 | answerId     | Number     | Id of the answer to undo downvote
 | answerBody   | String     | Body of the answer update
 | answerComment| String     | Comment of the answer update
+| preview      | Select     | Preview: true or false
 
 ## StackOverflow.getAnswerFlagOptions
 Returns the different flags that the user identified with an accessToken can create for the answer identified by answerId. 
@@ -268,6 +275,7 @@ Adds flag to the answer
 | accessToken| String     | Access token obtained from StackOverflow.
 | answerId   | Number     | Id of the answer
 | flagId     | Number     | Id of the flag
+| preview      | Select   | Preview: true or false
 
 ## StackOverflow.getAnswersToQuestions
 Gets the answers to a set of questions identified in ids.
@@ -295,6 +303,7 @@ Create a new answer on the given question.
 | accessToken| String     | Access token obtained from StackOverflow.
 | questionId | Number     | Id of the question to answer
 | answerBody | String     | Body of the answer
+| preview      | Select   | Preview: true or false
 
 ## StackOverflow.getMyAnswers
 Returns the answers owned by the user associated with the given accessToken.
@@ -485,6 +494,7 @@ Deletes an answer.
 | clientKey  | credentials| Client Key for your application
 | accessToken| String     | Access token obtained from StackOverflow.
 | answerId   | Number     | Id of the answer to delete
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.getAnswersComments
 Gets the comments on a set of answers.
@@ -545,6 +555,7 @@ Create a new comment.
 | accessToken| String     | Access token obtained from StackOverflow.
 | postId     | Number     | Id of the post to comment
 | commentBody| String     | Body of the comment
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.updateSingleComment
 Updates comment
@@ -555,6 +566,7 @@ Updates comment
 | accessToken| String     | Access token obtained from StackOverflow.
 | commentId  | Number     | Id of the comment to update
 | commentBody| String     | Body of the comment
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.getCommentFlagOptions
 Returns the different flags that the user identified with an accessToken can create for the comment identified by commentId.
@@ -564,6 +576,7 @@ Returns the different flags that the user identified with an accessToken can cre
 | clientKey  | credentials| Client Key for your application
 | accessToken| String     | Access token obtained from StackOverflow.
 | commentId  | Number     | Id of the comment
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.getQuestionFlagOptions
 Returns the different flags that the user identified with an accessToken can create for the question identified by questionId.
@@ -583,6 +596,7 @@ Adds flag to the comment
 | accessToken| String     | Access token obtained from StackOverflow.
 | commentId  | Number     | Id of the comment
 | flagId     | Number     | Id of the flag
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.upvoteComment
 Upvotes the comment.
@@ -592,6 +606,7 @@ Upvotes the comment.
 | clientKey  | credentials| Client Key for your application
 | accessToken| String     | Access token obtained from StackOverflow.
 | commentId  | Number     | Id of the comment to upvote
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.undoUpvoteOnComment
 Undo upvote on comment.
@@ -601,6 +616,7 @@ Undo upvote on comment.
 | clientKey  | credentials| Client Key for your application
 | accessToken| String     | Access token obtained from StackOverflow.
 | commentId  | Number     | Id of the comment to undo upvote
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.deleteSingleComment
 Deletes a comment.
@@ -610,6 +626,7 @@ Deletes a comment.
 | clientKey  | credentials| Client Key for your application
 | accessToken| String     | Access token obtained from StackOverflow.
 | commentId  | Number     | Id of the comment to delete
+| preview    | Select     | Preview: true or false
 
 ## StackOverflow.getPostsCommentsByIds
 Gets the comments on a set of posts.
