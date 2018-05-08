@@ -4,7 +4,7 @@ $app->post('/api/StackOverflow/addFlagToComment', function ($request, $response,
 
     //checking properly formed json
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['accessToken', 'clientKey', 'commentId', 'flagId']);
+    $validateRes = $checkRequest->validate($request, ['accessToken', 'clientKey', 'commentId', 'flagId', 'comment']);
     if (!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback'] == 'error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {
@@ -19,6 +19,7 @@ $app->post('/api/StackOverflow/addFlagToComment', function ($request, $response,
     $body['key'] = $post_data['args']['clientKey'];
     $body['option_id'] = $post_data['args']['flagId'];
     $body['preview'] = $post_data['args']['preview'];
+    $body['comment'] = $post_data['args']['comment'];
 
     //requesting remote API
     $client = new GuzzleHttp\Client();

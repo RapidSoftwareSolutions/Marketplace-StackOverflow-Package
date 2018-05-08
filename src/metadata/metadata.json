@@ -1128,6 +1128,12 @@
           "required": true
         },
         {
+          "name": "comment",
+          "type": "String",
+          "info": "Comment of the flag",
+          "required": true
+        },
+        {
           "name": "preview",
           "type": "Select",
           "options": [
@@ -2655,6 +2661,12 @@
           "name": "flagId",
           "type": "Number",
           "info": "Id of the flag",
+          "required": true
+        },
+        {
+          "name": "comment",
+          "type": "String",
+          "info": "Comment of the flag",
           "required": true
         },
         {
