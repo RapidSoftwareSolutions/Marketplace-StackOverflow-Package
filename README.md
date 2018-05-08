@@ -284,7 +284,7 @@ Gets the answers to a set of questions identified in ids.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| questionIds | String     | Question ids array
+| questionIds | String     | Question ids string (Example: 1;3)
 | sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
@@ -328,7 +328,7 @@ Returns the answers the users in userIds have posted.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| userIds     | String     | Ids of the users array.
+| userIds     | String     | Ids of the users string (Example: 1;3)
 | sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
 | pageNumber  | Number     | Number of the page
@@ -338,22 +338,6 @@ Returns the answers the users in userIds have posted.
 | min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
-## StackOverflow.getMyAnswers
-Returns the top 30 answers the user associated with the given accessToken has posted in response to questions with the given tags.
-
-| Field       | Type       | Description
-|-------------|------------|----------
-| clientKey   | credentials| Client key obtained from StackOverflow
-| accessToken | String     | Access token obtained from StackOverflow.
-| tagList     | String     | List of tags.
-| sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | Select     | Parameter to sort by. Possible values: activity(default), creation, votes.
-| pageNumber  | Number     | Number of the page
-| pageSize    | Number     | Size of the page
-| fromDate    | DatePicker | Defines the range of creation_date
-| toDate      | DatePicker | Defines the range of creation_date
-| min         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
-| max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
 ## StackOverflow.getUserTopAnswersByTags
 Returns the top 30 answers the user associated with the given userId has posted in response to questions with the given tags.
@@ -437,7 +421,7 @@ Gets all explicitly named badges in the system.
 | max         | Number     | Specify the range of a field must fall in (that field being specified by sortBy)
 
 ## StackOverflow.getTagsAwardedBadges
-Gets all explicitly tags badges in the system.
+Gets the badges that are awarded for participation in specific tags.
 
 | Field       | Type       | Description
 |-------------|------------|----------
@@ -478,7 +462,7 @@ Returns the badges earned by the users associated with the given userIds
 | accessToken | String     | Access token obtained from StackOverflow.
 | userIds     | List       | Ids of the users array.
 | sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
-| sortBy      | Select     | Parameter to sort by. Possible values: rank(default), name, type
+| sortBy      | Select     | Parameter to sort by. Possible values: rank(default), name, type, awarded
 | pageNumber  | Number     | Number of the page
 | pageSize    | Number     | Size of the page
 | fromDate    | DatePicker | Defines the range of creation_date
@@ -503,7 +487,7 @@ Gets the comments on a set of answers.
 |-------------|------------|----------
 | clientKey   | credentials| Client key obtained from StackOverflow
 | accessToken | String     | Access token obtained from StackOverflow.
-| answerIds   | String     | Answer Ids array
+| answerIds   | String     | Answer Ids string (Example: 1;3)
 | sortingOrder| Select     | Ascending or descending sorting order. Possible values: asc and desc(default).
 | sortBy      | Select     | Parameter to sort by. Possible values: creation(default), votes.
 | pageNumber  | Number     | Number of the page
@@ -792,6 +776,7 @@ Returns the unread items from a user's inbox associated with accessToken
 | accessToken| String     | Access token obtained from StackOverflow.
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
+| since      | DatePicker | Since the date
 
 ## StackOverflow.getUserUnreadInboxItems
 Returns the unread items in a user's inbox.
@@ -803,6 +788,7 @@ Returns the unread items in a user's inbox.
 | userId     | Number     | Id of the user
 | pageNumber | Number     | Number of the page
 | pageSize   | Number     | Size of the page
+| since      | DatePicker | Since the date
 
 ## StackOverflow.getMyAssociatedAccounts
 Returns all of a user's associated accounts, given an acccessToken for them.
@@ -839,7 +825,7 @@ Returns a summary of a user's activity across the Stack Exchange network, given 
 | pageSize     | Number     | Size of the page
 | fromDate     | DatePicker | Defines the range of creation_date
 | toDate       | DatePicker | Defines the range of creation_date
-| activityTypes| String     | Type of network activity
+| activityTypes| String     | One of question_posted, answer_posted, badge_earned, or comment_posted
 
 ## StackOverflow.getMyActivity
 Returns a summary of a user's activity across the Stack Exchange network associated with provided accessToken.
@@ -1295,7 +1281,7 @@ Gets all the synonyms that point to the tags identified in tagNames
 | max         | Number    | Specify the range of a field must fall in (that field being specified by sortBy)
 
 ## StackOverflow.getWikisForTags
-Gets all the wikis that go with the given set of tags in tagNames
+Gets the wikis that go with the given set of tags 
 
 | Field     | Type  | Description
 |-----------|-------|----------
@@ -1378,7 +1364,7 @@ Returns users' public reputation history.
 | pageSize   | Number     | Size of the page
 
 ## StackOverflow.search
-Returns returned search_excerpts have a snippet of the relevant results. Within the results, any text surrounded by <span class="highlight"> is of particular interest.
+Searches a site for items which match the given criteria.
 
 | Field        | Type      | Description
 |--------------|-----------|----------

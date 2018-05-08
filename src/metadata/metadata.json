@@ -4,8 +4,7 @@
   "description": "StackOverflow",
   "image": "http:\/\/logo.clearbit.com\/stackoverflow.com",
   "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-StackOverflow-Package",
-  "keywords": [
-  ],
+  "keywords": [],
   "accounts": {
     "domain": "stackOverflow.com",
     "credentials": [
@@ -20,12 +19,10 @@
     "Register an app(http://stackapps.com/apps/oauth/register)",
     "After creation your app you will see Client ID, Client Secret and Client Key"
   ],
-  "blocks": [
-    {
+  "blocks": [{
       "name": "getAccessToken",
       "description": "Creates a new token",
-      "args": [
-        {
+      "args": [{
           "name": "clientId",
           "type": "credentials",
           "info": "The client id obtained from StackOverflow.",
@@ -50,8 +47,7 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -64,16 +60,13 @@
     {
       "name": "invalidateAccessToken",
       "description": "Immediately expires the access token passed. This method is meant to allow an application to discard any active access tokens it no longer needs.",
-      "args": [
-        {
-          "name": "accessToken",
-          "type": "String",
-          "info": "Access token obtained from StackOverflow.",
-          "required": true
-        }
-      ],
-      "callbacks": [
-        {
+      "args": [{
+        "name": "accessToken",
+        "type": "String",
+        "info": "Access token obtained from StackOverflow.",
+        "required": true
+      }],
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -86,16 +79,13 @@
     {
       "name": "deAuthenticateApplication",
       "description": "This method is meant for uninstalling applications, recovering from access_token leaks",
-      "args": [
-        {
-          "name": "accessToken",
-          "type": "String",
-          "info": "Access token obtained from StackOverflow.",
-          "required": true
-        }
-      ],
-      "callbacks": [
-        {
+      "args": [{
+        "name": "accessToken",
+        "type": "String",
+        "info": "Access token obtained from StackOverflow.",
+        "required": true
+      }],
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -108,8 +98,7 @@
     {
       "name": "getMe",
       "description": "Returns the user associated with the passed accessToken",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -122,8 +111,7 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -136,8 +124,7 @@
     {
       "name": "getUsersByIds",
       "description": "Returns information about the user with provided Ids",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -219,8 +206,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -233,8 +219,7 @@
     {
       "name": "getUsers",
       "description": "Returns all users on a site.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -311,8 +296,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -325,8 +309,7 @@
     {
       "name": "getModerators",
       "description": "Gets those users on a site who can exercise moderation powers. Note, employees of Stack Exchange Inc. will be returned if they have been granted moderation powers on a site even if they have never been appointed or elected explicitly. This method checks abilities, not the manner in which they were obtained.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -397,8 +380,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -411,8 +393,7 @@
     {
       "name": "getElectedModerators",
       "description": "Returns those users on a site who both have moderator powers, and were actually elected. This method excludes Stack Exchange Inc. employees, unless they were actually elected moderators on a site (which can only have happened prior to their employment).",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -483,8 +464,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -497,8 +477,7 @@
     {
       "name": "getMyTimeline",
       "description": "Get a subset of the actions of that have been taken by the users identified by accessToken.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -535,8 +514,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -549,8 +527,7 @@
     {
       "name": "getUserTimeline",
       "description": "Get a subset of the actions of that have been taken by the users identified by id.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -566,8 +543,8 @@
           "name": "userIds",
           "type": "List",
           "info": "Id of the user",
-					"required": true,
-					"structure": {
+          "required": true,
+          "structure": {
             "name": "userId",
             "type": "Number",
             "info": "Id of each anser"
@@ -598,8 +575,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -612,8 +588,7 @@
     {
       "name": "getAllAnswers",
       "description": "Returns all the undeleted answers in the system.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -683,8 +658,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -697,8 +671,7 @@
     {
       "name": "getAnswersByIds",
       "description": "Returns answers in the system with provided Ids.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -779,8 +752,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -793,8 +765,7 @@
     {
       "name": "acceptAnswer",
       "description": "Accepts an answer.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -811,20 +782,19 @@
           "type": "Number",
           "info": "Id of the answer to accept",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -837,8 +807,7 @@
     {
       "name": "undoAcceptOnAnswer",
       "description": "Undo accept on answer.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -855,20 +824,19 @@
           "type": "Number",
           "info": "Id of the answer to undo accept",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -881,8 +849,7 @@
     {
       "name": "downvoteAnswer",
       "description": "Downvote an answer.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -899,20 +866,19 @@
           "type": "Number",
           "info": "Id of the answer to downvote",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -925,8 +891,7 @@
     {
       "name": "undoDownvoteOnAnswer",
       "description": "Undo downvote on answer.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -943,20 +908,19 @@
           "type": "Number",
           "info": "Id of the answer to undo downvote",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -969,8 +933,7 @@
     {
       "name": "upvoteAnswer",
       "description": "Upvote an answer.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -987,20 +950,19 @@
           "type": "Number",
           "info": "Id of the answer to upvote",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1013,8 +975,7 @@
     {
       "name": "undoUpvoteOnAnswer",
       "description": "Undo upvote on answer.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -1031,20 +992,19 @@
           "type": "Number",
           "info": "Id of the answer to undo upvote",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1057,8 +1017,7 @@
     {
       "name": "updateSingleAnswer",
       "description": "Updates answer",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -1087,20 +1046,19 @@
           "type": "String",
           "info": "Comment of the answer update",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1113,8 +1071,7 @@
     {
       "name": "getAnswerFlagOptions",
       "description": "Returns the different flags that the user identified with an accessToken can create for the answer identified by answerId. ",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -1133,8 +1090,7 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1147,8 +1103,7 @@
     {
       "name": "addFlagToAnswer",
       "description": "Adds flag to the answer",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -1171,20 +1126,19 @@
           "type": "Number",
           "info": "Id of the flag",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1197,8 +1151,7 @@
     {
       "name": "getAnswersToQuestions",
       "description": "Gets the answers to a set of questions identified in ids.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -1274,8 +1227,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1288,8 +1240,7 @@
     {
       "name": "createAnswerOnQuestion",
       "description": "Create a new answer on the given question.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -1312,20 +1263,19 @@
           "type": "String",
           "info": "Body of the answer",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1338,8 +1288,7 @@
     {
       "name": "getAnswersByUserIds",
       "description": "Returns the answers the users in userIds have posted.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -1351,12 +1300,12 @@
           "info": "Access token obtained from StackOverflow.",
           "required": true
         },
-				{
+        {
           "name": "userIds",
           "type": "List",
-          "info": "Id of the user",
-					"required": true,
-					"structure": {
+          "info": "Id of the user (Example: 1;3)",
+          "required": true,
+          "structure": {
             "name": "userId",
             "type": "Number",
             "info": "Id of each anser"
@@ -1420,8 +1369,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1434,8 +1382,7 @@
     {
       "name": "getMyAnswers",
       "description": "Returns the top 30 answers the user associated with the given accessToken has posted in response to questions with the given tags.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -1511,8 +1458,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1525,8 +1471,7 @@
     {
       "name": "getUserTopAnswersByTags",
       "description": "Returns the top 30 answers the user associated with the given userId has posted in response to questions with the given tags.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -1613,8 +1558,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1627,8 +1571,7 @@
     {
       "name": "getAllBadges",
       "description": "Returns all the badges in the system.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -1704,8 +1647,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1718,8 +1660,7 @@
     {
       "name": "getBadgesByIds",
       "description": "Gets the badges identified in badgeIds.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -1800,8 +1741,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1814,8 +1754,7 @@
     {
       "name": "getRecentlyAwardedBadges",
       "description": "Returns recently awarded badges in the system.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -1852,8 +1791,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1866,8 +1804,7 @@
     {
       "name": "getAllNamedBadges",
       "description": "Gets all explicitly named badges in the system.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -1942,8 +1879,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -1956,8 +1892,7 @@
     {
       "name": "getTagsAwardedBadges",
       "description": "Gets all explicitly named badges in the system.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -2032,8 +1967,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2046,8 +1980,7 @@
     {
       "name": "getMyBadges",
       "description": "Returns the badges earned by the user associated with the given accessToken",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -2117,8 +2050,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2131,8 +2063,7 @@
     {
       "name": "getUsersBadges",
       "description": "Returns the badges earned by the users associated with the given userIds",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -2171,10 +2102,10 @@
           "options": [
             "rank",
             "name",
-						"type",
-						"awarded"
+            "type",
+            "awarded"
           ],
-          "info": "Parameter to sort by. Possible values: rank(default), name, type",
+          "info": "Parameter to sort by. Possible values: rank(default), name, type, awarded",
           "required": false
         },
         {
@@ -2214,8 +2145,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2228,8 +2158,7 @@
     {
       "name": "deleteSingleAnswer",
       "description": "Deletes an answer.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -2246,20 +2175,19 @@
           "type": "Number",
           "info": "Id of the answer to delete",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2272,8 +2200,7 @@
     {
       "name": "getAnswersComments",
       "description": "Gets the comments on a set of answers.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -2348,8 +2275,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2362,8 +2288,7 @@
     {
       "name": "getAllComments",
       "description": "Gets all the comments on the site.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -2432,8 +2357,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2446,8 +2370,7 @@
     {
       "name": "getCommentsByIds",
       "description": "Gets all the comments with commentIds.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -2527,8 +2450,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2541,8 +2463,7 @@
     {
       "name": "createComment",
       "description": "Create a new comment.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -2565,20 +2486,19 @@
           "type": "String",
           "info": "Body of the comment",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2591,8 +2511,7 @@
     {
       "name": "updateSingleComment",
       "description": "Updates comment",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -2615,20 +2534,19 @@
           "type": "String",
           "info": "Body of the comment",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2641,8 +2559,7 @@
     {
       "name": "getCommentFlagOptions",
       "description": "Returns the different flags that the user identified with an accessToken can create for the comment identified by commentId.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -2659,20 +2576,19 @@
           "type": "Number",
           "info": "Id of the comment",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2685,8 +2601,7 @@
     {
       "name": "getQuestionFlagOptions",
       "description": "Returns the different flags that the user identified with an accessToken can create for the question identified by questionId.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -2705,8 +2620,7 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2719,8 +2633,7 @@
     {
       "name": "addFlagToComment",
       "description": "Adds flag to the comment",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -2737,26 +2650,25 @@
           "type": "Number",
           "info": "Id of the comment",
           "required": true
-				},
+        },
         {
           "name": "flagId",
           "type": "Number",
           "info": "Id of the flag",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2769,8 +2681,7 @@
     {
       "name": "upvoteComment",
       "description": "Upvotes the comment.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -2787,20 +2698,19 @@
           "type": "Number",
           "info": "Id of the comment to upvote",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2813,8 +2723,7 @@
     {
       "name": "undoUpvoteOnComment",
       "description": "Undo upvote on comment.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -2831,20 +2740,19 @@
           "type": "Number",
           "info": "Id of the comment to undo upvote",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2857,8 +2765,7 @@
     {
       "name": "deleteSingleComment",
       "description": "Deletes a comment.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client Key for your application",
@@ -2875,20 +2782,19 @@
           "type": "Number",
           "info": "Id of the comment to delete",
           "required": true
-				},
-				{
-					"name": "preview",
-					"type": "Select",
-					"options": [
+        },
+        {
+          "name": "preview",
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
           "info": "Preview: true or false",
           "required": false
-				}
+        }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2901,8 +2807,7 @@
     {
       "name": "getPostsCommentsByIds",
       "description": "Gets the comments on a set of posts.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -2982,8 +2887,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -2996,8 +2900,7 @@
     {
       "name": "getMyComments",
       "description": "Returns the comments owned by the user associated with the given accessToken.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3066,8 +2969,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3080,8 +2982,7 @@
     {
       "name": "getUsersComments",
       "description": "Gets the comments of users in userIds",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3161,8 +3062,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3175,8 +3075,7 @@
     {
       "name": "getMyReplyComments",
       "description": "Returns the comments owned by the user associated with the given accessToken that are in reply to the user identified by userId.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3251,8 +3150,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3265,8 +3163,7 @@
     {
       "name": "getUsersReplyComments",
       "description": "Get the comments that the users in commentatorIds have posted in reply to the single user identified in userId.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3352,8 +3249,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3366,8 +3262,7 @@
     {
       "name": "getMentionedMeComments",
       "description": "Returns the comments mentioning the user associated with the given accessToken.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3436,8 +3331,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3450,8 +3344,7 @@
     {
       "name": "getMentionedUsersComments",
       "description": "Returns the comments mentioning the users in userIds.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3531,8 +3424,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3545,8 +3437,7 @@
     {
       "name": "getAllEvents",
       "description": "Returns a stream of events that have occurred on the site.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3577,8 +3468,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3591,10 +3481,8 @@
     {
       "name": "getStackoverflowStatistics",
       "description": "Returns a collection of statistics about the site.",
-      "args": [
-      ],
-      "callbacks": [
-        {
+      "args": [],
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3607,8 +3495,7 @@
     {
       "name": "getMyInbox",
       "description": "Returns a user's inbox associated with accessToken",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3633,8 +3520,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3647,8 +3533,7 @@
     {
       "name": "getUserInbox",
       "description": "Returns a user's with provided Id inbox ",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3679,8 +3564,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3693,8 +3577,7 @@
     {
       "name": "getMyUnreadInboxItems",
       "description": "Returns the unread items from a user's inbox associated with accessToken",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3717,16 +3600,15 @@
           "type": "Number",
           "info": "Size of the page",
           "required": false
-				},
-				{
+        },
+        {
           "name": "since",
-					"type": "DatePicker",
+          "type": "DatePicker",
           "info": "Since the date",
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3739,8 +3621,7 @@
     {
       "name": "getUserUnreadInboxItems",
       "description": "Returns the unread items in a user's inbox.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3769,16 +3650,15 @@
           "type": "Number",
           "info": "Size of the page",
           "required": false
-				},
-				{
+        },
+        {
           "name": "since",
-					"type": "DatePicker",
+          "type": "DatePicker",
           "info": "Since the date",
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3791,8 +3671,7 @@
     {
       "name": "getMyAssociatedAccounts",
       "description": "Returns all of a user's associated accounts, given an acccessToken for them.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3823,8 +3702,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3837,8 +3715,7 @@
     {
       "name": "getAssociatedAccountsByUserIds",
       "description": "Returns all of a user's associated accounts, given their userIds",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3880,8 +3757,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3894,8 +3770,7 @@
     {
       "name": "getUserActivity",
       "description": "Returns a summary of a user's activity across the Stack Exchange network, given their userId.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -3944,8 +3819,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -3958,8 +3832,7 @@
     {
       "name": "getMyActivity",
       "description": "Returns a summary of a user's activity across the Stack Exchange network associated with provided accessToken.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4002,8 +3875,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4016,8 +3888,7 @@
     {
       "name": "getMyNotifications",
       "description": "Returns a user's notifications, given an accessToken.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4042,8 +3913,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4056,8 +3926,7 @@
     {
       "name": "getUserNotifications",
       "description": "Returns a user's notifications with provided userId.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4088,8 +3957,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4102,8 +3970,7 @@
     {
       "name": "getMyUnreadNotifications",
       "description": "Returns a user's unread notifications, given an accessToken.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4128,8 +3995,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4142,8 +4008,7 @@
     {
       "name": "getUserUnreadNotifications",
       "description": "Returns a user's unread notifications with provided userId.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4174,8 +4039,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4188,8 +4052,7 @@
     {
       "name": "getAllPosts",
       "description": "Fetches all posts (questions and answers) on the site.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4259,8 +4122,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4273,8 +4135,7 @@
     {
       "name": "getPostsByIds",
       "description": "Fetches posts (questions and answers) on the site with provided Ids.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4355,8 +4216,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4369,8 +4229,7 @@
     {
       "name": "getMyPosts",
       "description": "Fetches all posts (questions and answers) of the user with provided accessToken.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4440,8 +4299,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4454,8 +4312,7 @@
     {
       "name": "getPostsByUserIds",
       "description": "Fetches posts (questions and answers) on the site made by users with provided Ids.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4536,8 +4393,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4550,8 +4406,7 @@
     {
       "name": "getAllPrivileges",
       "description": "Returns the earnable privileges on a site.",
-      "args": [
-        {
+      "args": [{
           "name": "pageNumber",
           "type": "Number",
           "info": "Number of the page",
@@ -4564,8 +4419,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4578,8 +4432,7 @@
     {
       "name": "getMyPrivileges",
       "description": "Returns the privileges on a site for the user identified by provided accessToken.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4604,8 +4457,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4618,8 +4470,7 @@
     {
       "name": "getUserPrivileges",
       "description": "Returns the privileges on a site for the user identified by provided userId.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4650,8 +4501,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4664,8 +4514,7 @@
     {
       "name": "getMyReputation",
       "description": "Returns the reputation on a site for the user identified by provided accessToken.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4678,8 +4527,7 @@
           "required": true
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4692,8 +4540,7 @@
     {
       "name": "getUsersReputation",
       "description": "Returns the reputation on a site for the user identified by provided userIds.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4736,8 +4583,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4750,8 +4596,7 @@
     {
       "name": "getMyReputationHistory",
       "description": "Returns the reputation history on a site for the user identified by provided accessToken.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4776,8 +4621,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4790,8 +4634,7 @@
     {
       "name": "createFilter",
       "description": "Creates a new filter given a list of includes, excludes, a base filter, and whether or not this filter should be unsafe.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4823,8 +4666,8 @@
         },
         {
           "name": "unsafe",
-					"type": "Select",
-					"options": [
+          "type": "Select",
+          "options": [
             "true",
             "false"
           ],
@@ -4832,8 +4675,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4846,8 +4688,7 @@
     {
       "name": "getRevisionsByPostIds",
       "description": "Returns edit revisions for the posts identified in postsIds",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4895,8 +4736,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4909,8 +4749,7 @@
     {
       "name": "getRevisionsByIds",
       "description": "Returns edit revisions identified by revisionsIds",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -4958,8 +4797,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -4972,8 +4810,7 @@
     {
       "name": "getPostsSuggestedEdits",
       "description": "Returns suggested edits on the posts identified in ids.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -5054,8 +4891,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -5068,8 +4904,7 @@
     {
       "name": "getAllSuggestedEdits",
       "description": "Returns all the suggested edits in the systems.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -5139,8 +4974,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -5153,8 +4987,7 @@
     {
       "name": "getSuggestedEditsByIds",
       "description": "Returns suggested edits identified in editIds",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -5235,8 +5068,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -5249,8 +5081,7 @@
     {
       "name": "getMySuggestedEdits",
       "description": "Returns the suggested edits the user identified by accessToken has submitted.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -5320,8 +5151,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -5334,8 +5164,7 @@
     {
       "name": "getUsersSuggestedEdits",
       "description": "Returns the suggested edits a users in userIds have submitted.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -5416,8 +5245,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -5426,12 +5254,11 @@
           "info": "Success"
         }
       ]
-		},
-		{
+    },
+    {
       "name": "getUsersSuggestedEdits",
       "description": "Returns the suggested edits a users in userIds have submitted.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -5448,7 +5275,7 @@
           "type": "Number",
           "info": "User Ids array",
           "required": true
-        },   
+        },
         {
           "name": "pageNumber",
           "type": "Number",
@@ -5462,8 +5289,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -5476,8 +5302,7 @@
     {
       "name": "getTags",
       "description": "Returns the tags found on a site.",
-      "args": [
-        {
+      "args": [{
           "name": "inName",
           "type": "String",
           "info": "Filters down to tags that contain a certain substring",
@@ -5541,8 +5366,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -5555,8 +5379,7 @@
     {
       "name": "getModeratorTags",
       "description": "Returns the tags found on a site that only moderators can use.",
-      "args": [
-        {
+      "args": [{
           "name": "inName",
           "type": "String",
           "info": "Filters down to tags that contain a certain substring",
@@ -5620,8 +5443,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -5634,8 +5456,7 @@
     {
       "name": "getRequiredTags",
       "description": "Returns the tags found on a site that fulfill required tag constraints on questions.",
-      "args": [
-        {
+      "args": [{
           "name": "inName",
           "type": "String",
           "info": "Filters down to tags that contain a certain substring",
@@ -5699,8 +5520,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -5713,8 +5533,7 @@
     {
       "name": "getTagsInfo",
       "description": "Returns tag objects representing the tags in tagNames found on the site.",
-      "args": [
-        {
+      "args": [{
           "name": "tagNames",
           "type": "List",
           "info": "List of tag names array",
@@ -5783,8 +5602,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -5797,8 +5615,7 @@
     {
       "name": "getRelatedTags",
       "description": "Returns the tags that are most related to those in tagNames.",
-      "args": [
-        {
+      "args": [{
           "name": "tagNames",
           "type": "List",
           "info": "List of tag names array",
@@ -5822,8 +5639,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -5836,8 +5652,7 @@
     {
       "name": "getMyTags",
       "description": "Returns the tags the user identified by the accessToken passed is active in.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -5907,8 +5722,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -5921,8 +5735,7 @@
     {
       "name": "getUsersTags",
       "description": "Returns the tags the users identified in userIds have been active in.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -6003,8 +5816,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -6017,8 +5829,7 @@
     {
       "name": "getSingleTagTopAnswerers",
       "description": "Returns the top 30 answerers active in a single tag, of either all-time or the last 30 days.",
-      "args": [
-        {
+      "args": [{
           "name": "tagName",
           "type": "String",
           "info": "Name of the tag",
@@ -6047,8 +5858,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -6061,8 +5871,7 @@
     {
       "name": "getSingleTagTopAskers",
       "description": "Returns the top 30 askers active in a single tag, of either all-time or the last 30 days.",
-      "args": [
-        {
+      "args": [{
           "name": "tagName",
           "type": "String",
           "info": "Name of the tag",
@@ -6091,8 +5900,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -6105,8 +5913,7 @@
     {
       "name": "getAllTagsSynonyms",
       "description": "Returns all tag synonyms found a site.",
-      "args": [
-        {
+      "args": [{
           "name": "sortingOrder",
           "type": "Select",
           "options": [
@@ -6164,8 +5971,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -6178,8 +5984,7 @@
     {
       "name": "getSynonymsForTags",
       "description": "Gets all the synonyms that point to the tags identified in tagNames",
-      "args": [
-        {
+      "args": [{
           "name": "tagNames",
           "type": "List",
           "info": "list of tags",
@@ -6248,8 +6053,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -6261,9 +6065,8 @@
     },
     {
       "name": "getWikisForTags",
-      "description": "Gets all the synonyms that point to the tags identified in tagNames",
-      "args": [
-        {
+      "description": "Gets the wikis that go with the given set of tags",
+      "args": [{
           "name": "tagNames",
           "type": "List",
           "info": "list of tags",
@@ -6287,8 +6090,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -6301,8 +6103,7 @@
     {
       "name": "getMyTopAnswerTags",
       "description": "Returns the user identified by accessToken's top 30 tags by answer score.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -6327,8 +6128,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -6341,8 +6141,7 @@
     {
       "name": "getMyTopQuestionTags",
       "description": "Returns the user identified by accessToken's top 30 tags by question score.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -6367,8 +6166,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -6381,8 +6179,7 @@
     {
       "name": "getMyTopTags",
       "description": "Returns the user identified by accessToken's top 30 tags by combined question and answer score.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -6407,8 +6204,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -6421,8 +6217,7 @@
     {
       "name": "getUserTopAnswerTags",
       "description": "Returns the user identified by userId top 30 tags by answer score.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -6453,8 +6248,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -6467,8 +6261,7 @@
     {
       "name": "getUserTopQuestionTags",
       "description": "Returns the user identified by userId top 30 tags by question score.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -6499,8 +6292,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -6513,8 +6305,7 @@
     {
       "name": "getUserTopTags",
       "description": "Returns the user identified by userId top 30 tags by combined question and answer score.",
-      "args": [
-        {
+      "args": [{
           "name": "clientKey",
           "type": "credentials",
           "info": "Client key obtained from StackOverflow",
@@ -6545,8 +6336,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
@@ -6558,9 +6348,8 @@
     },
     {
       "name": "search",
-      "description": "Returns the user identified by userId top 30 tags by combined question and answer score.",
-      "args": [
-        {
+      "description": "Searches a site for items which match the given criteria.",
+      "args": [{
           "name": "searchString",
           "type": "String",
           "info": "A free form text parameter, will match all question properties based on an undocumented algorithm.",
@@ -6626,7 +6415,7 @@
         },
         {
           "name": "accepted",
-					"type": "Select",
+          "type": "Select",
           "options": [
             "True",
             "False"
@@ -6648,7 +6437,7 @@
         },
         {
           "name": "closed",
-					"type": "Select",
+          "type": "Select",
           "options": [
             "True",
             "False"
@@ -6658,7 +6447,7 @@
         },
         {
           "name": "migrated",
-					"type": "Select",
+          "type": "Select",
           "options": [
             "True",
             "False"
@@ -6668,7 +6457,7 @@
         },
         {
           "name": "notice",
-					"type": "Select",
+          "type": "Select",
           "options": [
             "True",
             "False"
@@ -6724,7 +6513,7 @@
         },
         {
           "name": "wiki",
-					"type": "Select",
+          "type": "Select",
           "options": [
             "True",
             "False"
@@ -6733,8 +6522,7 @@
           "required": false
         }
       ],
-      "callbacks": [
-        {
+      "callbacks": [{
           "name": "error",
           "info": "Error"
         },
